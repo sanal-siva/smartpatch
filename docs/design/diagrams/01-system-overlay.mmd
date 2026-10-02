@@ -1,0 +1,33 @@
+flowchart TB
+  subgraph B["BUILD PIPELINE"]
+    direction LR
+    SRC["Pinned source and package inputs"] --> BASE["Embedded manifest and scoped SBOM"]
+    BASE --> IDX["External release index"]
+    IDX --> SIGN["Builder signs exact index bytes"]
+  end
+  subgraph S["SONiC SWITCH"]
+    direction LR
+    COL["Package metadata and named facts"] --> JOURNAL["Local state and pending upload"]
+    JOURNAL --> SYNC["Outbound HTTPS synchronization"]
+    NATIVE["Native configuration and status"] --> COL
+  end
+  subgraph I["SERVICE"]
+    direction LR
+    API["Authenticated API and durable inventory"] --> WORK["Central Grype and bounded evidence analysis"]
+    WORK --> RESULT["Scoped findings and history"]
+    UI["Operator UI and reviewed decisions"] --> RESULT
+  end
+  SIGN -->|"Original artifacts and approved public key"| API
+  BASE -.->|"Included only in an image built with these hooks"| COL
+  SYNC -->|"Checkpoint, delta or heartbeat"| API
+  API -.->|"Poll response: ACK, results and queued requests"| SYNC
+  RESULT --> UI
+  ADV["Advisory database"] --> WORK
+  AI["Optional API provider"] <--> WORK
+  EXT["Signed-in external agent"] <-->|"Operator-led case workflow"| UI
+  classDef sonic fill:#eaf2ff,stroke:#4975a8,color:#173553
+  classDef service fill:#f1edff,stroke:#7564b6,color:#35274e
+  classDef external fill:#eef6ef,stroke:#5f8565,color:#24432a
+  class COL,JOURNAL,SYNC,NATIVE sonic
+  class API,WORK,RESULT,UI service
+  class SRC,BASE,IDX,SIGN,ADV,AI,EXT external

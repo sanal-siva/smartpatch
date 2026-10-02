@@ -1,0 +1,77 @@
+{
+  "figures": [
+    {
+      "source": "design/diagrams/01-system-overlay.svg",
+      "width": 1519.0,
+      "height": 1164.4000244140625,
+      "print_orientation": "landscape"
+    },
+    {
+      "source": "design/diagrams/02-switch-internals.svg",
+      "width": 1057.5,
+      "height": 1036.3616943359375,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/03-inventory-sync.svg",
+      "width": 1514.0,
+      "height": 1034.0,
+      "print_orientation": "landscape"
+    },
+    {
+      "source": "design/diagrams/08-build-provenance.svg",
+      "width": 550.75,
+      "height": 1204.60009765625,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/04-service-internals.svg",
+      "width": 935.0,
+      "height": 1105.059326171875,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/09-data-and-history.svg",
+      "width": 905.25,
+      "height": 994.5999755859375,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/05-analysis-and-cache.svg",
+      "width": 632.75,
+      "height": 1328.4000244140625,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/06-ai-evidence.svg",
+      "width": 628.625,
+      "height": 1120.7999267578125,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/10-external-agent-sequence.svg",
+      "width": 1283.5,
+      "height": 868.0,
+      "print_orientation": "landscape"
+    },
+    {
+      "source": "design/diagrams/07-maintenance.svg",
+      "width": 1172.0,
+      "height": 1188.0,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/11-apply-and-rollback.svg",
+      "width": 1392.5,
+      "height": 1236.0,
+      "print_orientation": "portrait"
+    },
+    {
+      "source": "design/diagrams/12-cli-remediation-status.svg",
+      "width": 1627.5,
+      "height": 838.0,
+      "print_orientation": "landscape"
+    }
+  ],
+  "html_bytes": 480439
+}

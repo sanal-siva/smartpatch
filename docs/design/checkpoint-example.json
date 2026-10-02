@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "device_id": "documentation-leaf1",
+  "epoch": "documentation-epoch",
+  "sequence": 1,
+  "kind": "checkpoint",
+  "inventory_digest": "d4b487b654bdae48b79d3480aceed88a00803d6fdd49eb389f51c71fdd5d4c7e",
+  "collected_at": "2026-09-30T00:00:00Z",
+  "components": [
+    {
+      "component_id": "documentation-host-example",
+      "scope": "host",
+      "name": "smart-patch-example",
+      "version": "1.0-1",
+      "architecture": "amd64"
+    }
+  ],
+  "removed": [],
+  "facts": []
+}

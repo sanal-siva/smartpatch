@@ -1,0 +1,108 @@
+{
+  "service": {
+    "tests": 532,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "passed": 530,
+    "seconds": 185.667,
+    "junit": "remediation-batches-service-junit.xml"
+  },
+  "focused": {
+    "tests": 71,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 71,
+    "seconds": 63.009,
+    "junit": "remediation-batches-focused-junit.xml"
+  },
+  "uncertainty": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 27,
+    "seconds": 5.645,
+    "junit": "remediation-batches-uncertainty-junit.xml"
+  },
+  "test_isolation": "Temporary fixture databases, synthetic collectors and scanner results; regression suite run outside deployment .env.",
+  "browser_full": {
+    "mode": "synthetic mock",
+    "pages_checked": 14,
+    "javascript_errors": [],
+    "screenshots": [
+      "overview-light.png",
+      "overview-dark.png",
+      "finding-evidence.png",
+      "external-agent-proposal.png",
+      "approved-manual-maintenance.png",
+      "approval-error-409.png",
+      "approval-error-403.png",
+      "collector-staging-denied.png",
+      "staged-maintenance.png",
+      "completed-scoped-reassessment.png",
+      "cve-discovery-mock.png",
+      "batch-preview.png",
+      "batch-paused-progress.png",
+      "overview-needs-evidence.png",
+      "mobile-request-performance.png"
+    ]
+  },
+  "browser_focused": {
+    "bulk_workflow": "passed",
+    "javascript_errors": [],
+    "screenshots": [
+      "batch-preview.png",
+      "batch-paused-progress.png"
+    ]
+  },
+  "documentation": {
+    "user_guide": {
+      "pdf_pages": 43,
+      "text_outside_page": [],
+      "bookmarks": 32,
+      "contents_links_resolve": true
+    },
+    "design": {
+      "pdf_pages": 63,
+      "text_outside_page": [],
+      "bookmarks": 28,
+      "contents_links_resolve": true
+    },
+    "new_sequence_diagram": "Rendered with local Mermaid successfully"
+  },
+  "live_package_operations": false,
+  "limitations": [
+    "Real-Grype integration tests require opt-in scanner/database configuration",
+    "Synthetic multi-switch tests do not qualify real switch installations",
+    "One API process; one eligible host package occurrence per switch per batch",
+    "Central-recheck repository targets use the existing single-switch plan workflow"
+  ],
+  "live_service": {
+    "verified_at": "2026-10-01T08:11:23.667664+00:00",
+    "health": {
+      "status": "healthy",
+      "database": "healthy",
+      "timestamp": "2026-10-01T08:11:21.597141Z"
+    },
+    "readiness": "ready",
+    "scanner_status": "ready",
+    "settings_preserved": true,
+    "enrollments_preserved": true,
+    "batch_api_ready": true,
+    "build_evidence_policy": "optional",
+    "forced_termination": false,
+    "ui_asset_matches_source": true,
+    "switch_changes_requested": false
+  },
+  "live_browser": {
+    "brand": "SONiC Smart Patch",
+    "four_switches_visible": true,
+    "batch_list_visible": true,
+    "selected_switches_action_visible": true,
+    "new_token_login": true,
+    "javascript_errors": [],
+    "write_requests": []
+  }
+}

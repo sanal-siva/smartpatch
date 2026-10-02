@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor Operator
+    participant CLI as Switch CLI and plans
+    participant Worker as Bounded package worker
+    participant Reporter as Collector reporter
+    participant API as Service and history
+    participant Scan as Central scanner
+    Operator->>CLI: Enable container permission
+    Operator->>CLI: Plan, stage, approve apply
+    CLI->>Worker: Bound package and container
+    Worker-->>CLI: Progress and receipts
+    Reporter->>API: Bound report and revision
+    API-->>Reporter: ACK and CVE status
+    Note over API: CLI report never grants approval
+    CLI->>API: Fresh scoped inventory
+    API->>Scan: Scan exact current inventory
+    Scan-->>API: Complete scan and matches
+    API->>API: Verify target and CVE absence
+    API-->>Reporter: Resolved or waiting reason
+    Reporter-->>Operator: Cache for CLI and GUI

@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-01T04:56:54.989922+00:00",
+  "local_links_checked": {
+    "README.md": 14,
+    "UI_DOCUMENTATION.md": 2,
+    "IMPLEMENTATION_SUMMARY.md": 3,
+    "docs/COMMUNITY_SONIC_DESIGN.md": 57,
+    "docs/USER_GUIDE.md": 23,
+    "docs/INTELLIGENCE_SERVICE_DESIGN.md": 98,
+    "docs/README.md": 8,
+    "docs/DETAILED_DESIGN.md": 179,
+    "docs/DEPLOYMENT.md": 0,
+    "docs/design/README.md": 5
+  },
+  "broken_links": [],
+  "scope": "Current Smart Patch documentation links and syntax only; no runtime or switch actions."
+}

@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-01T04:56:54.989922+00:00",
+  "markdown_words": 8539,
+  "bash_blocks_syntax_checked": 38,
+  "json_blocks_parsed": 9,
+  "screenshots": 14,
+  "screenshots_use_synthetic_fixtures": true,
+  "no_service_or_switch_changes": true,
+  "pdf_pages": 41,
+  "bookmarks": 31,
+  "no_previous_brand": true,
+  "no_private_paths_or_addresses": true,
+  "artifacts": {
+    "USER_GUIDE.md": {
+      "sha256": "263dc1e9f6c34ea76e06a06080883a903b91ad37f0eb65ff5ba554e65c890000",
+      "bytes": 62786
+    },
+    "USER_GUIDE.html": {
+      "sha256": "92cf6660f54d03fd2b8a69a9cdfb59ae96c4018191aa47f5b320f5300da6751e",
+      "bytes": 3628367
+    },
+    "USER_GUIDE.pdf": {
+      "sha256": "c240db2de194cf0b0fa3905882e98a6b705f18b0408cd8268e17d7ce0794b1c7",
+      "bytes": 5420242
+    }
+  }
+}

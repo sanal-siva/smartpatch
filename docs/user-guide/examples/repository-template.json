@@ -1,0 +1,13 @@
+[
+  {
+    "base_url": "https://deb.debian.org/debian",
+    "suite": "trixie",
+    "components": [
+      "main"
+    ],
+    "architectures": [
+      "amd64"
+    ],
+    "keyring": "/usr/share/keyrings/debian-archive-keyring.gpg"
+  }
+]

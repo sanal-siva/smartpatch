@@ -1,0 +1,841 @@
+{
+  "generated_at": "2026-10-01T04:52:33.368133+00:00",
+  "scope": "documentation_only",
+  "no_ssh": true,
+  "no_network": true,
+  "no_collector_daemon_or_actuator_run": true,
+  "verification": "Source/package inspection and isolated help only; native registration simulated with the actual plugin files, not a switch installation",
+  "package": {
+    "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch_3.0.0-1_all.deb",
+    "sha256": "13518c46b2630c25468a41d1097f73af68b21449a044396c991d82fb345892e6",
+    "bytes": 36310,
+    "control": "Package: sonic-smart-patch\nVersion: 3.0.0-1",
+    "verification": "Archive metadata only; no installation or deployment performed by this documentation check."
+  },
+  "defaults": {
+    "enabled": "false",
+    "mode": "advisory",
+    "sync_interval": "60",
+    "inventory_interval": "900",
+    "min_available_mb": "256",
+    "allow_http": "false",
+    "max_components": "20000",
+    "maintenance_cpu_quota_percent": "0",
+    "maintenance_min_free_mib": "500",
+    "maintenance_checks_enabled": "false",
+    "validation_services": "ssh,database,swss,syncd,bgp",
+    "validation_cpu_max_pct": "80",
+    "validation_memory_max_pct": "90",
+    "validation_disk_max_pct": "85",
+    "validation_disk_path": "/var/lib/sonic-smart-patch",
+    "validation_prefix_loss_pct": "0",
+    "validation_require_prefix_counts": "true"
+  },
+  "unset_fields": [
+    "service_url",
+    "ca_bundle",
+    "autonomous_allowlist"
+  ],
+  "commands": [
+    {
+      "id": "configure",
+      "native_command": "sudo config security smart-patch enable",
+      "standalone_command": "sudo security config smart-patch enable",
+      "effects": "writes configuration and starts/persists native unit",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "smart-patch",
+          "enable",
+          "--help"
+        ],
+        "output": "Usage: security config smart-patch enable [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "smart-patch",
+          "enable",
+          "--help"
+        ],
+        "output": "Usage: config security smart-patch enable [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "disable",
+      "native_command": "sudo config security smart-patch disable",
+      "standalone_command": "sudo security config smart-patch disable",
+      "effects": "publishes disabled state then stops/disables native unit",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "smart-patch",
+          "disable",
+          "--help"
+        ],
+        "output": "Usage: security config smart-patch disable [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "smart-patch",
+          "disable",
+          "--help"
+        ],
+        "output": "Usage: config security smart-patch disable [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "mode",
+      "native_command": "sudo config security smart-patch mode advisory",
+      "standalone_command": "sudo security config smart-patch mode advisory",
+      "effects": "saves mode; no collector invocation",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "smart-patch",
+          "mode",
+          "--help"
+        ],
+        "output": "Usage: security config smart-patch mode [OPTIONS] {advisory|assisted|autonomous}\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "smart-patch",
+          "mode",
+          "--help"
+        ],
+        "output": "Usage: config security smart-patch mode [OPTIONS] {advisory|assisted|autonomous}\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "mode-flags",
+      "native_command": "sudo config security smart-patch --mode advisory",
+      "standalone_command": "sudo security config smart-patch --mode advisory",
+      "effects": "mode/enable/disable flag subgroup",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "smart-patch",
+          "--help"
+        ],
+        "output": "Usage: security config smart-patch [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --enable\n  --disable\n  --mode [advisory|assisted|autonomous]\n  --help                          Show this message and exit.\n\nCommands:\n  disable\n  enable\n  mode\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "smart-patch",
+          "--help"
+        ],
+        "output": "Usage: config security smart-patch [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --enable\n  --disable\n  --mode [advisory|assisted|autonomous]\n  --help                          Show this message and exit.\n\nCommands:\n  disable\n  enable\n  mode\n"
+      }
+    },
+    {
+      "id": "service-url",
+      "native_command": "sudo config security service-url https://<server-ip>:8000",
+      "standalone_command": "sudo security config service-url https://<server-ip>:8000",
+      "effects": "saves origin or /api/v1 URL",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "service-url",
+          "--help"
+        ],
+        "output": "Usage: security config service-url [OPTIONS] URL\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "service-url",
+          "--help"
+        ],
+        "output": "Usage: config security service-url [OPTIONS] URL\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "token",
+      "native_command": "sudo config security auth-token",
+      "standalone_command": "sudo security config auth-token",
+      "effects": "hidden prompt or protected file; writes credentials.json",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "auth-token",
+          "--help"
+        ],
+        "output": "Usage: security config auth-token [OPTIONS] [TOKEN]\n\nOptions:\n  --token-file FILE\n  --help             Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "auth-token",
+          "--help"
+        ],
+        "output": "Usage: config security auth-token [OPTIONS] [TOKEN]\n\nOptions:\n  --token-file FILE\n  --help             Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "setting",
+      "native_command": "sudo config security setting NAME VALUE",
+      "standalone_command": "sudo security config setting NAME VALUE",
+      "effects": "validates named setting and persists it",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "config",
+          "setting",
+          "--help"
+        ],
+        "output": "Usage: security config setting [OPTIONS] {ca_bundle|sync_interval|inventory_inte\n                               rval|min_available_mb|allow_http|autonomous_allow\n                               list|maintenance_cpu_quota_percent|maintenance_mi\n                               n_free_mib|maintenance_checks_enabled|validation_\n                               services|validation_cpu_max_pct|validation_memory\n                               _max_pct|validation_disk_max_pct|validation_disk_\n                               path|validation_prefix_loss_pct|validation_requir\n                               e_prefix_counts} VALUE\n\n  Save a setting; maintenance checks default false, CPU 0 is unlimited, disk in\n  MiB.\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "config",
+          "security",
+          "setting",
+          "--help"
+        ],
+        "output": "Usage: config security setting [OPTIONS] {ca_bundle|sync_interval|inventory_inte\n                               rval|min_available_mb|allow_http|autonomous_allow\n                               list|maintenance_cpu_quota_percent|maintenance_mi\n                               n_free_mib|maintenance_checks_enabled|validation_\n                               services|validation_cpu_max_pct|validation_memory\n                               _max_pct|validation_disk_max_pct|validation_disk_\n                               path|validation_prefix_loss_pct|validation_requir\n                               e_prefix_counts} VALUE\n\n  Save a setting; maintenance checks default false, CPU 0 is unlimited, disk in\n  MiB.\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "status",
+      "native_command": "show security status --json",
+      "standalone_command": "security show status --json",
+      "effects": "reads sanitized snapshot; output always JSON",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "show",
+          "status",
+          "--help"
+        ],
+        "output": "Usage: security show status [OPTIONS]\n\nOptions:\n  --json\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "show",
+          "security",
+          "status",
+          "--help"
+        ],
+        "output": "Usage: show security status [OPTIONS]\n\nOptions:\n  --json\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "findings",
+      "native_command": "show security findings --severity HIGH --json",
+      "standalone_command": "security show findings --severity HIGH --json",
+      "effects": "reads sanitized cached findings",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "show",
+          "findings",
+          "--help"
+        ],
+        "output": "Usage: security show findings [OPTIONS]\n\nOptions:\n  --severity [CRITICAL|HIGH|MEDIUM|LOW|UNKNOWN]\n  --json\n  --help                          Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "show",
+          "security",
+          "findings",
+          "--help"
+        ],
+        "output": "Usage: show security findings [OPTIONS]\n\nOptions:\n  --severity [CRITICAL|HIGH|MEDIUM|LOW|UNKNOWN]\n  --json\n  --help                          Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "finding",
+      "native_command": "show security finding FINDING_ID",
+      "standalone_command": "security show finding FINDING_ID",
+      "effects": "reads cached rows by finding or CVE ID",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "show",
+          "finding",
+          "--help"
+        ],
+        "output": "Usage: security show finding [OPTIONS] FINDING_ID\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "show",
+          "security",
+          "finding",
+          "--help"
+        ],
+        "output": "Usage: show security finding [OPTIONS] FINDING_ID\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "evidence",
+      "native_command": "show security evidence FINDING_ID",
+      "standalone_command": "security show evidence FINDING_ID",
+      "effects": "alias of cached finding display, not fresh evidence collection",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "show",
+          "evidence",
+          "--help"
+        ],
+        "output": "Usage: security show evidence [OPTIONS] FINDING_ID\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "show",
+          "security",
+          "evidence",
+          "--help"
+        ],
+        "output": "Usage: show security evidence [OPTIONS] FINDING_ID\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "drift",
+      "native_command": "show security inventory-drift",
+      "standalone_command": "security show inventory-drift",
+      "effects": "shows pending summary and acknowledged sequence",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "show",
+          "inventory-drift",
+          "--help"
+        ],
+        "output": "Usage: security show inventory-drift [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "show",
+          "security",
+          "inventory-drift",
+          "--help"
+        ],
+        "output": "Usage: show security inventory-drift [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "resources",
+      "native_command": "show security resource-usage",
+      "standalone_command": "security show resource-usage",
+      "effects": "reads last collector measurement",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "show",
+          "resource-usage",
+          "--help"
+        ],
+        "output": "Usage: security show resource-usage [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      },
+      "native_registration_help": {
+        "exit_code": 0,
+        "argv": [
+          "show",
+          "security",
+          "resource-usage",
+          "--help"
+        ],
+        "output": "Usage: show security resource-usage [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "sync",
+      "native_command": null,
+      "standalone_command": "sudo security sync --force",
+      "effects": "one-shot collect/send/ack; may process approved pending actions",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "sync",
+          "--help"
+        ],
+        "output": "Usage: security sync [OPTIONS]\n\nOptions:\n  --force\n  --help   Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "scan-now",
+      "native_command": null,
+      "standalone_command": "sudo security scan now --json",
+      "effects": "same Agent.sync(force=True); durable pending retry takes precedence",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "scan",
+          "now",
+          "--help"
+        ],
+        "output": "Usage: security scan now [OPTIONS]\n\nOptions:\n  --json\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "collect",
+      "native_command": null,
+      "standalone_command": "sudo security collect",
+      "effects": "direct metadata collection; no sync/cache write",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "collect",
+          "--help"
+        ],
+        "output": "Usage: security collect [OPTIONS]\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "maintenance-plan",
+      "native_command": null,
+      "standalone_command": "sudo security maintenance plan FINDING_ID EXACT_FIXED_VERSION",
+      "effects": "creates local plan UUID",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "maintenance",
+          "plan",
+          "--help"
+        ],
+        "output": "Usage: security maintenance plan [OPTIONS] FINDING_ID TARGET_VERSION\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "maintenance-stage",
+      "native_command": null,
+      "standalone_command": "sudo security maintenance stage LOCAL_PLAN_UUID",
+      "effects": "APT simulation and exact artifact downloads",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "maintenance",
+          "stage",
+          "--help"
+        ],
+        "output": "Usage: security maintenance stage [OPTIONS] PLAN_ID\n\nOptions:\n  --help  Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "maintenance-apply",
+      "native_command": null,
+      "standalone_command": "sudo security maintenance apply LOCAL_PLAN_UUID --approve",
+      "effects": "approved real package transaction",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "maintenance",
+          "apply",
+          "--help"
+        ],
+        "output": "Usage: security maintenance apply [OPTIONS] PLAN_ID\n\nOptions:\n  --approve  Approve this exact staged plan\n  --help     Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "maintenance-rollback",
+      "native_command": null,
+      "standalone_command": "sudo security maintenance rollback LOCAL_PLAN_UUID --approve",
+      "effects": "approved retained-artifact rollback",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "maintenance",
+          "rollback",
+          "--help"
+        ],
+        "output": "Usage: security maintenance rollback [OPTIONS] PLAN_ID\n\nOptions:\n  --approve\n  --help     Show this message and exit.\n"
+      }
+    },
+    {
+      "id": "vex",
+      "native_command": null,
+      "standalone_command": "sudo security export-vex --output smart-patch-vex.json",
+      "effects": "writes basename beneath /var/lib/sonic-smart-patch/vex",
+      "source": [
+        {
+          "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/cli.py",
+          "sha256": "9da804b63cb8eaf1d9d8719994d1412ce88436861fece270cadc7009766d3c40"
+        }
+      ],
+      "standalone_help": {
+        "exit_code": 0,
+        "argv": [
+          "security",
+          "export-vex",
+          "--help"
+        ],
+        "output": "Usage: security export-vex [OPTIONS]\n\nOptions:\n  --output TEXT\n  --help         Show this message and exit.\n"
+      }
+    }
+  ],
+  "standalone_alias_help_checks": [
+    {
+      "command": "show vulnerabilities --help",
+      "exit_code": 0
+    },
+    {
+      "command": "show vulnerability --help",
+      "exit_code": 0
+    }
+  ],
+  "sources": {
+    "config_authority": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/config.py",
+      "sha256": "f84caba1bd76413c104cdcc0f0b4d4e570209a812f2229e3d1de696e462c7559"
+    },
+    "config_write": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/config.py",
+      "sha256": "f84caba1bd76413c104cdcc0f0b4d4e570209a812f2229e3d1de696e462c7559"
+    },
+    "defaults": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/config.py",
+      "sha256": "f84caba1bd76413c104cdcc0f0b4d4e570209a812f2229e3d1de696e462c7559"
+    },
+    "token_storage": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/config.py",
+      "sha256": "f84caba1bd76413c104cdcc0f0b4d4e570209a812f2229e3d1de696e462c7559"
+    },
+    "lifecycle": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/lifecycle.py",
+      "sha256": "0e6f50c41a867e8603b56c90d6a1e40e9cc5b3ac3fce1c72a2fab9ce425d1de2"
+    },
+    "service_manager": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/lifecycle.py",
+      "sha256": "0e6f50c41a867e8603b56c90d6a1e40e9cc5b3ac3fce1c72a2fab9ce425d1de2"
+    },
+    "collector_limits": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/collector.py",
+      "sha256": "dfdd107ae26c8f563f26f7e820e5c814def38c7629868f1f3457073b91e53360"
+    },
+    "enrollment_helper": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/collector.py",
+      "sha256": "dfdd107ae26c8f563f26f7e820e5c814def38c7629868f1f3457073b91e53360"
+    },
+    "build_identity": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/collector.py",
+      "sha256": "dfdd107ae26c8f563f26f7e820e5c814def38c7629868f1f3457073b91e53360"
+    },
+    "evidence_collectors": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/collector.py",
+      "sha256": "dfdd107ae26c8f563f26f7e820e5c814def38c7629868f1f3457073b91e53360"
+    },
+    "service_url_tls": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/agent.py",
+      "sha256": "043b99580f10fda45260b40b7e71d7b7a7f8952cc90f60975d733065eebe2d27"
+    },
+    "memory_guard": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/agent.py",
+      "sha256": "043b99580f10fda45260b40b7e71d7b7a7f8952cc90f60975d733065eebe2d27"
+    },
+    "durable_sync": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/agent.py",
+      "sha256": "043b99580f10fda45260b40b7e71d7b7a7f8952cc90f60975d733065eebe2d27"
+    },
+    "preparation_and_evidence": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/agent.py",
+      "sha256": "043b99580f10fda45260b40b7e71d7b7a7f8952cc90f60975d733065eebe2d27"
+    },
+    "status_publication": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/agent.py",
+      "sha256": "043b99580f10fda45260b40b7e71d7b7a7f8952cc90f60975d733065eebe2d27"
+    },
+    "cache_limit": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/agent.py",
+      "sha256": "043b99580f10fda45260b40b7e71d7b7a7f8952cc90f60975d733065eebe2d27"
+    },
+    "public_projection": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/storage.py",
+      "sha256": "a08f14c495a62bff688a8f7d99efffe32230e022f9978f878c5a5403d2050524"
+    },
+    "public_read": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/storage.py",
+      "sha256": "a08f14c495a62bff688a8f7d99efffe32230e022f9978f878c5a5403d2050524"
+    },
+    "state_store": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/storage.py",
+      "sha256": "a08f14c495a62bff688a8f7d99efffe32230e022f9978f878c5a5403d2050524"
+    },
+    "daemon_step": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/main.py",
+      "sha256": "c8350e7c1a1c87ba371172cba1d8dd631e4638991aa26e30c2619e0432ed6091"
+    },
+    "daemon_backoff": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/main.py",
+      "sha256": "c8350e7c1a1c87ba371172cba1d8dd631e4638991aa26e30c2619e0432ed6091"
+    },
+    "daemon_logging": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/main.py",
+      "sha256": "c8350e7c1a1c87ba371172cba1d8dd631e4638991aa26e30c2619e0432ed6091"
+    },
+    "systemd_memory_max": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/debian/sonic-smart-patch.service",
+      "sha256": "f107a89e95a606ad5f9662f417d0346dffb9222e78d133da042f642f32bf78f4"
+    },
+    "systemd_cpu_quota": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/debian/sonic-smart-patch.service",
+      "sha256": "f107a89e95a606ad5f9662f417d0346dffb9222e78d133da042f642f32bf78f4"
+    },
+    "no_auto_start": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/debian/rules",
+      "sha256": "56f64803b3c8a8226ee8ee3f7dddfbbeb6fade3c94478dad362a4e6b19bae48c"
+    },
+    "package_install_registration": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/debian/postinst",
+      "sha256": "4c4782d49ea7ffdfe2b5da12401c05e1197a0dfac4067a52ca40d3dddbd8a769"
+    },
+    "plugin_config": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/plugins/config.py",
+      "sha256": "524b4dba293c5e8deb577c8bbdacbb50a3508123104db237d874cef2e0cbab76"
+    },
+    "plugin_show": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/plugins/show.py",
+      "sha256": "fdb4ab088a5c4b1d2943757b7644003f1b9a0c6d71ffec6d29d7ef776805b045"
+    },
+    "plugin_location": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/scripts/install-plugins.py",
+      "sha256": "56fcaeee0e11b8b851bf32d1aaf4d331e342c5e4b1eec51e5606c957d64eb926"
+    },
+    "yang_registration": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/scripts/install-yang.py",
+      "sha256": "8a66b139689dcea096dc0ffe2fc935c69a48206d8d464c9292908e85d546a1d7"
+    },
+    "yang_native_directory": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/scripts/install-yang.py",
+      "sha256": "8a66b139689dcea096dc0ffe2fc935c69a48206d8d464c9292908e85d546a1d7"
+    },
+    "yang_model": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-yang-models/yang-models/sonic-smart-patch.yang",
+      "sha256": "5c041f40340f23e71f080916b582c5eb8a7a4c95cd9fcc09dc0bed41e020190b"
+    },
+    "protected_packages": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/remediation.py",
+      "sha256": "3100ed7ab38acc7cda3b823a7c3761b48fa88634780843c462b4f2e156d3b2fe"
+    },
+    "local_plan": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/remediation.py",
+      "sha256": "3100ed7ab38acc7cda3b823a7c3761b48fa88634780843c462b4f2e156d3b2fe"
+    },
+    "local_stage": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/remediation.py",
+      "sha256": "3100ed7ab38acc7cda3b823a7c3761b48fa88634780843c462b4f2e156d3b2fe"
+    },
+    "local_apply": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/remediation.py",
+      "sha256": "3100ed7ab38acc7cda3b823a7c3761b48fa88634780843c462b4f2e156d3b2fe"
+    },
+    "local_rollback": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/remediation.py",
+      "sha256": "3100ed7ab38acc7cda3b823a7c3761b48fa88634780843c462b4f2e156d3b2fe"
+    },
+    "autonomous_policy": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/actions.py",
+      "sha256": "7f7cf8f3a55bc4990ae6b102d97745de43cb2025a9e8ff6fbec397b2cb822a38"
+    },
+    "validation": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/validation.py",
+      "sha256": "50611b782dd5e134bfb7aaa944bd1163df93178f73d67668b5db6d9a6289da45"
+    },
+    "vex_output": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/vex.py",
+      "sha256": "44d677814d8e9e686b0f6b08a144f4b1a5e5185c5f2254811551bfb4a517ca25"
+    },
+    "vex_document": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/vex.py",
+      "sha256": "44d677814d8e9e686b0f6b08a144f4b1a5e5185c5f2254811551bfb4a517ca25"
+    },
+    "hook": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/smart_patch/hooks.py",
+      "sha256": "02fd7821ea914bcb0e62a1b33c63aff3347675aef128ccf968ab89cc056de120"
+    },
+    "apt_hook_registration": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/config/50sonic-smart-patch-hooks",
+      "sha256": "203a0fe26c7aae8f33a05172c7f7dac2b688419d91631b6a600ec2f88f7ca4e5"
+    },
+    "entry_points": {
+      "path": "<path-to-sonic-buildimage>/src/sonic-smart-patch/setup.py",
+      "sha256": "afe400f70124058f5690dc8ef18159afa52dee799096bfdd56fb6538346c6dec"
+    },
+    "sonic_config_save_usage": {
+      "path": "<path-to-sonic-buildimage>/files/image_config/warmboot-finalizer/finalize-warmboot.sh",
+      "sha256": "8030180484143809f10770fc69f3ccc18def0c7d8982f9c45cb6d3a4e5007b70"
+    },
+    "evidence_request_api": {
+      "path": "<path-to-intelligence-service>/app/main.py",
+      "sha256": "72b9ad0d79629d04de6e2edd2958698fe4a206042f2e3c288a795c44a9f6f224"
+    }
+  },
+  "important_distinctions": [
+    "No top-level smart-patch executable",
+    "Native config/show register only security subgroup; sync/collect/maintenance/export-vex use standalone security",
+    "Evidence show is finding alias and only sanitized evidence references",
+    "--output VEX argument is basename under /var/lib/sonic-smart-patch/vex",
+    "max_components is YANG/ConfigDB only, omitted from setting CLI choices",
+    "Manual collect/sync are outside daemon cgroup; collect bypasses Agent memory-availability guard",
+    "Build checksum identifies the inspected 3.0.0-1 package; this report verifies documentation commands and makes no deployment claim."
+  ]
+}

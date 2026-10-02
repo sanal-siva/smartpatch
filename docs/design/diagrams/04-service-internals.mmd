@@ -1,0 +1,25 @@
+flowchart TB
+  CLIENT["Collectors and operator UI"] --> API["main.py and models
+Authenticate and validate"]
+  API --> RUNTIME["Runtime
+Capture identity and coordinate"]
+  RUNTIME --> STORE[("Store
+Inventory, records and history")]
+  RUNTIME --> QUEUE["Durable operation queue"]
+  SCHED["Scheduler
+Persisted deadlines and recovery"] --> QUEUE
+  QUEUE --> WORKER["Bounded worker threads"]
+  WORKER --> MATCH["Central Grype
+Scoped match cache"]
+  WORKER --> EVIDENCE["Evidence policy and tools
+Optional bounded AI"]
+  WORKER --> RELEASE["Release and source jobs
+Signed repository metadata"]
+  MATCH --> COMMIT["Current identity guard"]
+  EVIDENCE --> COMMIT
+  RELEASE --> COMMIT
+  COMMIT --> STORE
+  STORE --> READ["Compact summaries
+UI, analytics and local alerts"]
+  STORE --> RETAIN["Reference-aware retention
+Archive before deletion"]

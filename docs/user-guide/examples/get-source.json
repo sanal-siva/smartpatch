@@ -1,0 +1,7 @@
+{
+  "root": "sonic-buildimage",
+  "revision": "<source-commit>",
+  "path": "rules/lldpd.mk",
+  "start_line": 1,
+  "line_count": 40
+}

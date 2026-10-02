@@ -1,0 +1,90 @@
+{
+  "mermaid_version": "11.6.0",
+  "renderer_sha256": "3a93016a73dc82ba890d919f9bbb176f3da9d98341650c0b517f2595cc68fef8",
+  "diagrams": [
+    {
+      "file": "01-system-overlay.mmd",
+      "sha256": "1052c470314e490f01b8e8d58517393676726b9403f224269a83498d12286f78",
+      "width": 1519,
+      "height": 1165,
+      "svg_text_elements": 35
+    },
+    {
+      "file": "02-switch-internals.mmd",
+      "sha256": "8f2c69fb9d9c84014e7fb291b7b9da322ff10cadc9eb81c9ec3ab224f23337c5",
+      "width": 1058,
+      "height": 1037,
+      "svg_text_elements": 26
+    },
+    {
+      "file": "03-inventory-sync.mmd",
+      "sha256": "0a579f76b2f7503e373e9ce3a87e537d03744e4a1f56247e8b1ed6be96ecb202",
+      "width": 1514,
+      "height": 1034,
+      "svg_text_elements": 37
+    },
+    {
+      "file": "04-service-internals.mmd",
+      "sha256": "9be5561f0de4f4cba714c98aa8cf761dd4ba7b94c9d5a433b9ecad53639af2a3",
+      "width": 935,
+      "height": 1106,
+      "svg_text_elements": 28
+    },
+    {
+      "file": "05-analysis-and-cache.mmd",
+      "sha256": "95e6ff8e15069241625a49b2f72aa8944998c81ae3866d3b2ac6f893d6153c38",
+      "width": 633,
+      "height": 1329,
+      "svg_text_elements": 22
+    },
+    {
+      "file": "06-ai-evidence.mmd",
+      "sha256": "070334b872e0a69d0ca6af0b395fc002a348cee19181520f2025de8bd72aa2c1",
+      "width": 629,
+      "height": 1121,
+      "svg_text_elements": 27
+    },
+    {
+      "file": "07-maintenance.mmd",
+      "sha256": "f35480e096f090b4e753bc23b2cdeaec380245828fcc78bd67e0026a9e133ae1",
+      "width": 1172,
+      "height": 1188,
+      "svg_text_elements": 38
+    },
+    {
+      "file": "08-build-provenance.mmd",
+      "sha256": "9cff3fed3de7358934a27d4e5afb1d671d27f50b1a71fb17cc840cbcf05b0ae7",
+      "width": 551,
+      "height": 1205,
+      "svg_text_elements": 23
+    },
+    {
+      "file": "09-data-and-history.mmd",
+      "sha256": "95cd00030067f0f57a4cbd8881e1677ea555521448cc464f03439c415d68a36e",
+      "width": 906,
+      "height": 995,
+      "svg_text_elements": 27
+    },
+    {
+      "file": "10-external-agent-sequence.mmd",
+      "sha256": "6bb42084bea9a1f4b8ddb396e1714f828fe745416779270218509e64f1d60edf",
+      "width": 1284,
+      "height": 868,
+      "svg_text_elements": 33
+    },
+    {
+      "file": "11-apply-and-rollback.mmd",
+      "sha256": "92eabd81e571c2103fbd156a57455cb4c91ce3f709427615e831e108ba5a2d83",
+      "width": 1393,
+      "height": 1236,
+      "svg_text_elements": 41
+    },
+    {
+      "file": "12-cli-remediation-status.mmd",
+      "sha256": "4b7f90430b655d3dc22f0009295eab8370a1ba6fa7779ee5f83bb2705e308177",
+      "width": 1628,
+      "height": 838,
+      "svg_text_elements": 25
+    }
+  ]
+}

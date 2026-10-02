@@ -1,0 +1,12 @@
+{
+  "proposed_applicability": "under_investigation",
+  "rationale": "The source recipe identifies a backport revision, but the recorded evidence does not verify the installed artifact. Keep this occurrence under investigation until package provenance is confirmed.",
+  "evidence_ids": [
+    "REPLACE_WITH_CURRENT_SESSION_EVIDENCE_ID"
+  ],
+  "unknowns": [
+    "Verified association of the installed binary with the patched source"
+  ],
+  "recommended_action": "collect_evidence",
+  "agent_name": "My signed-in coding agent"
+}

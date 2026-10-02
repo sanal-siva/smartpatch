@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <title>SONiC Smart Patch · Security workspace</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%235f51e8'/%3E%3Cpath d='M16 6l8 4v7c0 5-8 10-8 10S8 22 8 17v-7z' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/ui/static/css/style.css?v={{ asset_version }}">
+  <script defer src="/ui/static/js/app.js?v={{ asset_version }}"></script>
+</head>
+<body data-page="{{ page }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="/ui/" aria-label="SONiC Smart Patch overview"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 20 7v6c0 4.5-8 8-8 8s-8-3.5-8-8V7l8-4Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>SONiC <strong>Smart Patch</strong><small>INTELLIGENCE WORKSPACE</small></span></a>
+      <div class="workspace-label"><span class="workspace-dot"></span> Community SONiC <span class="mini-label">V3</span></div>
+      <nav>
+        <p class="nav-label">OPERATIONS</p>
+        <a data-nav="overview" href="/ui/"><span data-icon="overview"></span>Overview</a>
+        <a data-nav="fleet" href="/ui/fleet"><span data-icon="fleet"></span>Switch fleet</a>
+        <a data-nav="findings" href="/ui/findings"><span data-icon="shield"></span>Findings<span id="nav-findings-count" class="nav-count" hidden></span></a>
+        <a data-nav="coverage" href="/ui/coverage"><span data-icon="coverage"></span>Coverage & freshness</a>
+        <a data-nav="changes" href="/ui/changes"><span data-icon="activity"></span>Activity</a>
+        <a data-nav="plans" href="/ui/plans"><span data-icon="plan"></span>Remediation plans</a>
+        <a data-nav="remediation-status" href="/ui/remediation-status"><span data-icon="activity"></span>Remediation status</a>
+        <p class="nav-label">INTELLIGENCE</p>
+        <a data-nav="jobs" href="/ui/jobs"><span data-icon="jobs"></span>Analysis jobs</a>
+        <a data-nav="tools" href="/ui/tools"><span data-icon="code"></span>Evidence tools</a>
+        <a data-nav="releases" href="/ui/releases"><span data-icon="box"></span>Builds & releases</a>
+        <p class="nav-label">ANALYTICS</p>
+        <a data-nav="packages-trends" href="/ui/packages-trends"><span data-icon="box"></span>Package trends</a>
+        <a data-nav="cve-trends" href="/ui/cve-trends"><span data-icon="activity"></span>CVE trends</a>
+        <a data-nav="request-status" href="/ui/request-status"><span data-icon="clock"></span>Request performance</a>
+        <p class="nav-label">ADMINISTRATION</p>
+        <a data-nav="settings" href="/ui/settings"><span data-icon="settings"></span>Settings & providers</a>
+        <a data-nav="tokens" href="/ui/tokens"><span data-icon="key"></span>Access tokens</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="agent-symbol">SP</div><div><strong>Evidence before action</strong><p>Built for the SONiC community</p></div></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="topbar-left"><button type="button" class="icon-button mobile-menu" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span data-icon="menu"></span></button><span class="topbar-product">Security operations</span><span class="breadcrumb-slash">/</span><span id="breadcrumb">Overview</span></div><div class="topbar-actions"><span class="service-state" id="connection-state"><i></i><span>Not connected</span></span><button type="button" class="icon-button" id="theme-toggle" aria-label="Switch to dark theme"><span data-icon="moon"></span></button><button type="button" class="button button-small button-quiet" id="auth-button"><span data-icon="key"></span>Connect</button></div></header>
+      <main id="main" tabindex="-1"><div class="page-heading"><div><p class="eyebrow" id="page-eyebrow">SECURITY OPERATIONS</p><h1 id="page-title">Security overview</h1><p class="page-description" id="page-description">Know what is running, what is affected, and what to do next.</p></div><div class="heading-actions"><span class="last-updated" id="last-updated">Awaiting connection</span><button class="button button-secondary" id="refresh-button" type="button"><span data-icon="refresh"></span>Refresh</button></div></div><div id="page-content" aria-live="polite" aria-busy="false"><div class="empty-state"><span class="empty-icon" data-icon="shield"></span><h2>Connect to your security workspace</h2><p>Use an administrator token to view your fleet and its evidence.</p><button type="button" class="button button-primary" data-action="connect">Connect securely</button></div></div></main>
+      <footer class="workspace-footer"><span>SONiC Smart Patch <span class="footer-divider">/</span> Community security intelligence</span><span>Inventory → Evidence → Decision</span></footer>
+    </div>
+  </div>
+  <dialog id="auth-dialog" class="modal auth-modal" aria-labelledby="auth-title"><form id="auth-form"><div class="dialog-heading"><div class="dialog-emblem"><span data-icon="shield"></span></div><button type="button" class="icon-button" data-close-dialog="auth-dialog" aria-label="Close connection dialog">×</button></div><p class="eyebrow">WORKSPACE ACCESS</p><h2 id="auth-title">Connect to Smart Patch</h2><p class="muted">Use your Smart Patch service token, which is separate from an AI-provider key or your coding agent’s sign-in. It stays in this browser tab and is sent only to this service.</p><label for="auth-token">Smart Patch service token</label><input id="auth-token" name="token" type="password" autocomplete="off" required placeholder="Paste your access token" spellcheck="false"><p id="auth-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" class="button button-quiet" id="disconnect-button">Disconnect</button><button type="submit" class="button button-primary">Connect to workspace<span data-icon="arrow"></span></button></div></form></dialog>
+  <dialog id="detail-dialog" class="modal detail-modal" aria-labelledby="detail-title"><div class="detail-top"><p class="eyebrow" id="detail-kind">EVIDENCE RECORD</p><button type="button" class="icon-button" data-close-dialog="detail-dialog" aria-label="Close details">×</button></div><div id="detail-content"></div></dialog>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+</body>
+</html>

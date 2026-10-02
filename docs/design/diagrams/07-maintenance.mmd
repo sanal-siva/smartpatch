@@ -1,0 +1,23 @@
+sequenceDiagram
+  autonumber
+  actor O as Operator
+  participant S as Intelligence service
+  participant G as SONiC Smart Patch
+  O->>S: Create plan for one device, package and scope
+  S-->>O: Draft target and explicit eligibility
+  opt Target recheck needed
+    O->>S: Validate exact target
+    S->>S: Central recheck clears earlier approval
+  end
+  O->>S: Approve current review
+  O->>S: Request staging
+  S->>S: Persist stage request and current identity
+  G->>S: Outbound poll
+  S-->>G: Stage only if authorization remains current
+  G->>G: Simulate dependencies and stage exact artifacts
+  Note over G: No installation or full health baseline at stage
+  G->>S: Durable staging receipt
+  S->>S: Matching successful receipt enables execution
+  O->>S: Confirm device ID and request execution
+  S->>S: Queue execute request, clear eligibility
+  Note over S,G: Core and service container plans remain reviewed maintenance

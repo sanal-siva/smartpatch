@@ -1,0 +1,21 @@
+sequenceDiagram
+  autonumber
+  participant A as SONiC Agent
+  participant J as Local journal
+  participant S as Service API and Store
+  participant W as Central worker
+  A->>J: Acquire sync lock and inspect pending state
+  Note over A,J: Existing pending content is replayed unchanged
+  A->>A: Collect only when no pending upload and due
+  A->>J: Persist any newly prepared envelope
+  A->>S: POST over verified HTTPS
+  S->>S: Validate, reconstruct, hash and commit
+  S->>W: Enqueue changed input after commit
+  Note over S,W: A pending marker covers an enqueue interruption
+  S-->>A: Return matching ACK and current result state
+  A->>J: Verify ACK and commit calibration and cache
+  W->>W: Match scopes and evaluate evidence
+  W->>S: Commit only while captured identity is current
+  A->>S: Next heartbeat or inventory change
+  S-->>A: Results and typed requests for later handling
+  Note over A,S: Error and resync branches bypass this normal path<br/>Transport or 409 errors retain pending<br/>Explicit resync clears pending and starts a new epoch

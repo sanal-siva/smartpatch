@@ -1,0 +1,9 @@
+{
+  "collector": "package_versions",
+  "scope": "host",
+  "args": {
+    "packages": [
+      "lldpd"
+    ]
+  }
+}

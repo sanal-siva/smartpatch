@@ -1,0 +1,622 @@
+{
+  "schema_version": 1,
+  "source_review_date": "2026-10-01",
+  "workspace_url": "https://<server-ip>:8000/ui/",
+  "purpose": "Documentation form reference with synthetic screenshot examples; no live outcome claim",
+  "credentials_included": false,
+  "connect": {
+    "label": "Smart Patch service token",
+    "accepted_roles": [
+      "operator",
+      "admin"
+    ],
+    "verification_request": "GET /api/v1/settings",
+    "browser_storage": "sessionStorage",
+    "controls": [
+      "Connect",
+      "Connect securely",
+      "Connect to workspace",
+      "Connected",
+      "Disconnect"
+    ],
+    "not_accepted_as_workspace_credentials": [
+      "switch password",
+      "AI-provider API key",
+      "coding-agent SSO sign-in",
+      "device collector token"
+    ],
+    "screenshot_key": "connect"
+  },
+  "screens": [
+    {
+      "key": "overview",
+      "title": "Overview",
+      "path": "/ui/",
+      "inputs": [
+        "Affected",
+        "Needs evidence",
+        "Refresh"
+      ],
+      "expected": "Recorded fleet/findings/coverage and selected review queue",
+      "screenshot_keys": [
+        "overview"
+      ]
+    },
+    {
+      "key": "fleet",
+      "title": "Switch fleet",
+      "path": "/ui/fleet",
+      "inputs": [
+        "Search hostname, address, build, or platform"
+      ],
+      "actions": [
+        "Inspect",
+        "Queue central scan",
+        "View findings",
+        "Request observation",
+        "Export scoped VEX"
+      ],
+      "detail_inputs": {
+        "Runtime evidence collector": [
+          "services",
+          "listeners",
+          "features",
+          "interfaces",
+          "routing",
+          "resources",
+          "inventory"
+        ],
+        "Runtime evidence scope": "Exact existing scope, e.g. host or container:lldp"
+      },
+      "expected": "Collector observations and central operations remain asynchronous; first 200 components shown in detail",
+      "screenshot_keys": [
+        "fleet",
+        "device-detail",
+        "runtime-evidence"
+      ]
+    },
+    {
+      "key": "findings",
+      "title": "Findings",
+      "path": "/ui/findings",
+      "inputs": [
+        "Search CVE, package, switch, or scope",
+        "All applicability",
+        "All severities"
+      ],
+      "search_example": "CVE-2023-41910",
+      "applicability_options": [
+        "affected",
+        "under_investigation",
+        "fixed",
+        "not_affected"
+      ],
+      "severity_options": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ],
+      "page_size": 50,
+      "actions": [
+        "Inspect CVE\u2026",
+        "Investigate with evidence",
+        "External agent review",
+        "Record reviewed verdict",
+        "Create review plan",
+        "Create plan (N)"
+      ],
+      "selection_constraint": "One device/package/installed version/scope per maintenance plan",
+      "screenshot_keys": [
+        "findings",
+        "finding-evidence",
+        "review-verdict",
+        "external-agent-session",
+        "external-agent-proposal"
+      ]
+    },
+    {
+      "key": "coverage",
+      "title": "Coverage & freshness",
+      "path": "/ui/coverage",
+      "inputs": [],
+      "expected": "Reported inventory scan coverage, signed baseline associations and unresolved findings are separate",
+      "screenshot_keys": [
+        "coverage"
+      ]
+    },
+    {
+      "key": "changes",
+      "title": "Activity",
+      "path": "/ui/changes",
+      "inputs": [],
+      "expected": "Recorded event timeline in browser-local timezone",
+      "screenshot_keys": [
+        "activity"
+      ]
+    },
+    {
+      "key": "plans",
+      "title": "Remediation plans",
+      "path": "/ui/plans",
+      "actions": [
+        "Review",
+        "Recheck selected target",
+        "2 \u00b7 Approve review",
+        "3 \u00b7 Stage packages",
+        "4 \u00b7 Review execution",
+        "Refresh plan",
+        "Request plan execution"
+      ],
+      "inputs": [
+        "Target version for central recheck",
+        "Confirm target switch identity"
+      ],
+      "screenshot_keys": [
+        "plan-review",
+        "plan-staged",
+        "execution-confirmation"
+      ]
+    },
+    {
+      "key": "jobs",
+      "title": "Analysis jobs",
+      "path": "/ui/jobs",
+      "actions": [
+        "Inspect"
+      ],
+      "expected": "Operation status/progress, timestamps, worker logs, result/error",
+      "screenshot_keys": [
+        "jobs"
+      ]
+    },
+    {
+      "key": "tools",
+      "title": "Evidence tools",
+      "path": "/ui/tools",
+      "inputs": [
+        "Evidence tool",
+        "Arguments \u00b7 JSON"
+      ],
+      "actions": [
+        "Input schema",
+        "Run evidence tool"
+      ],
+      "textarea_shape": "Arguments object only; the UI adds the outer arguments envelope",
+      "screenshot_keys": [
+        "source-tool"
+      ]
+    },
+    {
+      "key": "releases",
+      "title": "Builds & releases",
+      "path": "/ui/releases",
+      "register_fields": {
+        "release_id": "Release / build ID",
+        "source_url": "Source URL",
+        "source_revision": "Pinned source revision",
+        "sbom_source": "SBOM source",
+        "primary": "Mark as primary",
+        "repositories": "Signed APT repositories \u00b7 JSON"
+      },
+      "upload_fields": {
+        "release_id": "Release / build ID",
+        "file": "SBOM document"
+      },
+      "actions": [
+        "Register release",
+        "Upload SBOM",
+        "Inspect",
+        "Verify binding"
+      ],
+      "screenshot_keys": [
+        "register-release",
+        "upload-sbom",
+        "release-record",
+        "verify-binding"
+      ]
+    },
+    {
+      "key": "packages-trends",
+      "title": "Package trends",
+      "path": "/ui/packages-trends",
+      "inputs": [
+        "Observation window"
+      ],
+      "window_days": [
+        7,
+        30,
+        90,
+        366
+      ],
+      "expected": "Observed inventory, heuristic family distribution and recorded version-update rankings",
+      "screenshot_keys": [
+        "package-trends"
+      ]
+    },
+    {
+      "key": "cve-trends",
+      "title": "CVE trends",
+      "path": "/ui/cve-trends",
+      "inputs": [
+        "Observation window"
+      ],
+      "window_days": [
+        7,
+        30,
+        90,
+        366
+      ],
+      "expected": "Separate first-observed fleet CVE buckets, applicability stock and current package/severity grid",
+      "screenshot_keys": [
+        "cve-trends"
+      ]
+    },
+    {
+      "key": "request-status",
+      "title": "Request performance",
+      "path": "/ui/request-status",
+      "inputs": [
+        "Observation window"
+      ],
+      "window_days": [
+        7,
+        30,
+        90,
+        366
+      ],
+      "expected": "Assessment API request timings/cache/outcomes; separate from scanner jobs",
+      "screenshot_keys": [
+        "request-performance"
+      ]
+    },
+    {
+      "key": "settings",
+      "title": "Settings & providers",
+      "path": "/ui/settings",
+      "save_role": "admin",
+      "fields": {
+        "ai_provider": "AI provider",
+        "ai_model": "Model",
+        "ai_api_url": "API base URL",
+        "ai_api_key": "Provider API key",
+        "source_revision": "Source revision",
+        "scan_interval_seconds": "Scan interval (seconds)",
+        "ai_max_findings": "CVEs per provider batch",
+        "scanner_binary": "Scanner binary",
+        "ai_enabled": "Enable evidence-assisted AI analysis",
+        "source_roots": "Source roots \u00b7 JSON",
+        "alerts_enabled": "Enable operational alerts",
+        "alert_min_samples": "Minimum measured samples",
+        "alert_latency_p95_seconds": "API latency p95 threshold \u00b7 seconds",
+        "alert_cache_hit_rate_percent": "Minimum cache hit rate \u00b7 percent",
+        "alert_error_rate_percent": "Maximum API error rate \u00b7 percent",
+        "alert_queue_depth": "Queue depth alert threshold"
+      },
+      "read_only_fields": [
+        "scanner_binary"
+      ],
+      "actions": [
+        "Save configuration",
+        "Inspect settings"
+      ],
+      "screenshot_keys": [
+        "settings"
+      ]
+    },
+    {
+      "key": "tokens",
+      "title": "Access tokens",
+      "path": "/ui/tokens",
+      "role": "admin",
+      "fields": {
+        "description": "Description",
+        "role": "Role",
+        "device_id": "Device ID"
+      },
+      "role_labels": {
+        "agent": "Device collector",
+        "operator": "Operator",
+        "admin": "Administrator"
+      },
+      "actions": [
+        "Create token",
+        "Copy token",
+        "Dismiss token",
+        "Revoke",
+        "Revoke token"
+      ],
+      "screenshot_keys": [
+        "tokens"
+      ]
+    }
+  ],
+  "examples": {
+    "get_source_ui_arguments": {
+      "root": "sonic-buildimage",
+      "revision": "<source-commit>",
+      "path": "rules/lldpd.mk",
+      "start_line": 1,
+      "line_count": 80
+    },
+    "get_source_api_body": {
+      "arguments": {
+        "root": "sonic-buildimage",
+        "revision": "<source-commit>",
+        "path": "rules/lldpd.mk",
+        "start_line": 1,
+        "line_count": 80
+      }
+    },
+    "get_source_expected_observation": {
+      "revision": "<source-commit>",
+      "path": "rules/lldpd.mk",
+      "total_lines": 29,
+      "version": "1.0.16",
+      "version_suffix": "1+deb12u1",
+      "complete": true,
+      "basis": "Recorded official clone acceptance; current tool availability/root alias must be checked in Input schema",
+      "evidence_file": "test-results/source-clone-acceptance/rules-lldpd-evidence.json"
+    },
+    "compare_versions_ui_arguments": {
+      "ecosystem": "deb",
+      "installed": "1.0.16-1+deb12u1",
+      "other": "1.0.16-1+deb12u1"
+    },
+    "compare_versions_expected": {
+      "comparison": 0,
+      "meaning": "Equality only, not a vulnerability or compatibility verdict"
+    },
+    "source_roots_ui_json": [
+      "<path-to-sonic-buildimage>"
+    ],
+    "release_register_api_body": {
+      "release_id": "<release-id>",
+      "source_url": "https://github.com/sonic-net/sonic-buildimage",
+      "source_revision": "<source-commit>",
+      "sbom_source": "",
+      "primary": false,
+      "repositories": [
+        {
+          "base_url": "https://deb.debian.org/debian",
+          "suite": "bookworm",
+          "components": [
+            "main"
+          ],
+          "architectures": [
+            "amd64"
+          ],
+          "keyring": "/usr/share/keyrings/debian-archive-keyring.gpg"
+        }
+      ]
+    },
+    "signed_apt_repositories_ui_json": [
+      {
+        "base_url": "https://deb.debian.org/debian",
+        "suite": "bookworm",
+        "components": [
+          "main"
+        ],
+        "architectures": [
+          "amd64"
+        ],
+        "keyring": "/usr/share/keyrings/debian-archive-keyring.gpg"
+      }
+    ],
+    "release_repository_caveat": "Example suite/architecture must match intended package provenance; keyring must already exist on the server. Repository availability is not SONiC compatibility.",
+    "sbom_upload_form": {
+      "release_id": "<release-id>",
+      "file": "Select the exact actual SBOM JSON artifact from your workstation"
+    },
+    "external_agent_ui_proposal_template": {
+      "proposed_applicability": "under_investigation",
+      "rationale": "The recorded source recipe selects a Debian backport version, but no verified binding proves that this installed component was built from those patched sources. Additional artifact evidence is required.",
+      "evidence_ids": [
+        "REPLACE_WITH_AN_EXISTING_SESSION_EVIDENCE_ID"
+      ],
+      "unknowns": [
+        "Binding from the installed LLDP binary to the recorded source and patch set"
+      ],
+      "recommended_action": "collect_evidence",
+      "agent_name": "My signed-in coding agent"
+    },
+    "external_agent_api_submission_template": {
+      "snapshot_hash": "COPY_FROM_CURRENT_SESSION",
+      "cve_id": "COPY_FROM_CURRENT_SESSION",
+      "component_id": "COPY_FROM_CURRENT_SESSION",
+      "scope_id": "COPY_FROM_CURRENT_SESSION",
+      "proposed_applicability": "under_investigation",
+      "rationale": "The recorded source recipe selects a Debian backport version, but no verified binding proves that this installed component was built from those patched sources. Additional artifact evidence is required.",
+      "evidence_ids": [
+        "REPLACE_WITH_AN_EXISTING_SESSION_EVIDENCE_ID"
+      ],
+      "unknowns": [
+        "Binding from the installed LLDP binary to the recorded source and patch set"
+      ],
+      "recommended_action": "collect_evidence",
+      "agent_name": "My signed-in coding agent"
+    },
+    "external_agent_template_requires_replacement": true,
+    "session_get_source_request": {
+      "method": "POST",
+      "path": "/api/v1/agent-sessions/{session_id}/tools/get_source",
+      "body": {
+        "arguments": {
+          "root": "sonic-buildimage",
+          "revision": "<source-commit>",
+          "path": "rules/lldpd.mk",
+          "start_line": 1,
+          "line_count": 80
+        }
+      },
+      "caveat": "Use only a root and revision authorized by this session bundle; this example root is not guaranteed in every case"
+    },
+    "explicit_repeat_release_sync": {
+      "method": "POST",
+      "path": "/api/v1/sync-now",
+      "body": {
+        "release_id": "<release-id>"
+      },
+      "role": "admin",
+      "ui_button_available": false
+    },
+    "runtime_observation_api_body": {
+      "collector": "services",
+      "scope": "host",
+      "args": {}
+    },
+    "token_creation_template": {
+      "description": "Lab leaf collector",
+      "role": "agent",
+      "device_id": "COPY_EXACT_COLLECTOR_DEVICE_ID"
+    }
+  },
+  "signed_binding": {
+    "role": "admin",
+    "requires_uploaded_artifact": true,
+    "api_path": "/api/v1/artifacts/verify",
+    "api_fields": [
+      "release_id",
+      "manifest_text",
+      "release_index_text",
+      "signature_base64",
+      "key_id"
+    ],
+    "ui_fields": {
+      "key_id": "Approved public-key ID",
+      "manifest_file": "Embedded manifest \u00b7 original JSON file",
+      "index_file": "Signed external release index \u00b7 original JSON file",
+      "signature_file": "Detached signature \u00b7 binary .sig file"
+    },
+    "file_roles": {
+      "manifest_file": "Exact pre-seal manifest, also embedded at /etc/sonic/smart-patch/manifest.json",
+      "index_file": "Exact <image>.smart-patch.json",
+      "signature_file": "Binary signature over exact index bytes, e.g. <image>.smart-patch.json.sig"
+    },
+    "key_example": {
+      "key_id": "community-builder-2026",
+      "server_public_key_path": "STATE_DIR/trusted-build-keys/community-builder-2026.pem",
+      "public_key_must_be_provisioned": true
+    },
+    "bounds": {
+      "manifest_bytes": 1048576,
+      "index_bytes": 1048576,
+      "signature_bytes_min": 1,
+      "signature_bytes_max": 1024
+    },
+    "algorithms": [
+      "RSA PKCS1v15 SHA256",
+      "Ed25519"
+    ],
+    "verified_result_label": "Builder signature verified",
+    "runtime_attestation": "not_available"
+  },
+  "external_agent": {
+    "requires_provider_api_key": false,
+    "web_provider_sso_button_exists": false,
+    "creates_model_call_automatically": false,
+    "submission_changes_applicability": false,
+    "identity_claim_verified_by_provider": false,
+    "session_minutes": 20,
+    "max_tool_calls": 12,
+    "max_context_chars": 16000,
+    "max_response_chars": 48000,
+    "max_bundle_chars": 32000,
+    "max_fact_requests": 4,
+    "ui_identity_defaults": [
+      "snapshot_hash",
+      "cve_id",
+      "component_id",
+      "scope_id"
+    ],
+    "recommended_action_values": [
+      "collect_evidence",
+      "manual_review",
+      "maintenance_review",
+      "no_change_pending_verification"
+    ],
+    "input_fields": [
+      "Agent result JSON file \u00b7 optional",
+      "Agent proposal JSON"
+    ],
+    "input_limit_note": "Response text <= session max_response_chars; file bytes <= 4 * this limit; submission schema applies",
+    "generic_console_attaches_to_session": false
+  },
+  "review": {
+    "role": "admin",
+    "applicability_values": [
+      "under_investigation",
+      "affected",
+      "fixed",
+      "not_affected"
+    ],
+    "justification_min_characters": 20,
+    "justification_max_characters": 4000,
+    "requires_existing_evidence_ids": true,
+    "https_reference_required_for": [
+      "fixed",
+      "not_affected"
+    ],
+    "vex_justification_required_for": [
+      "not_affected"
+    ],
+    "vex_justification_values": [
+      "component_not_present",
+      "vulnerable_code_not_present",
+      "vulnerable_code_not_in_execute_path",
+      "vulnerable_code_cannot_be_controlled_by_adversary",
+      "inline_mitigations_already_exist"
+    ],
+    "expires_days": 30
+  },
+  "maintenance": {
+    "create_role": "operator_or_admin",
+    "approve_stage_execute_role": "admin",
+    "plan_hours": 24,
+    "stages": [
+      "Review target",
+      "Approve",
+      "Stage & check",
+      "Execute",
+      "Reassess"
+    ],
+    "target_validation_clears_approval": true,
+    "ui_eligibility": {
+      "approve": "unexpired draft with target_version",
+      "validate": "unexpired draft/approved/validation_failed/target_validation_failed and options present",
+      "stage": "unexpired approved + approved=true + staging_eligible=true",
+      "execute": "unexpired staged + approved=true + execution_eligible=true + successful staging report"
+    },
+    "execution_confirmation": {
+      "label": "Confirm target switch identity",
+      "exact_value": "plan.device_id",
+      "body_field": "confirmed_device_id"
+    },
+    "high_impact_note": "Container/core/kernel/FRR/OpenSSL plans may be manual runbooks; generic package plan does not execute image activation/reboot/routing restart"
+  },
+  "known_ui_caveats": [
+    "Repository UI precheck permits 16 entries; backend limit is eight. Document/use eight.",
+    "No dedicated release Sync button in current table; upload/configured source/API/background scheduling trigger sync.",
+    "Global evidence console does not bind to the selected finding or external session.",
+    "UI exposes fewer failed-plan recovery actions than the API; create/review a current plan when needed."
+  ],
+  "screenshot_rules": [
+    "Never show a entered/revealed Smart Patch token or API key.",
+    "Label mocked fixtures synthetic; do not label them deployed results.",
+    "Use actual unavailable/unverified/under-investigation states when present.",
+    "Root guide author captures and attaches screenshots; this reference does not run live actions."
+  ],
+  "verified_sources": [
+    "app/ui/static/js/app.js",
+    "app/ui/templates/workspace.html",
+    "app/ui/routes.py",
+    "app/api/models.py",
+    "app/main.py",
+    "app/services/source_tools.py",
+    "app/services/external_agent.py",
+    "app/services/provenance.py",
+    "app/services/maintenance_policy.py",
+    "docs/DEPLOYMENT.md"
+  ]
+}

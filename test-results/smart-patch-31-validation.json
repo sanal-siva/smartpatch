@@ -1,0 +1,358 @@
+{
+  "features": [
+    "maintenance-mode gated container package updates and automatic selected-container restart",
+    "CLI/service CVE lifecycle and current scoped resolution history",
+    "exact authenticated Debian Snapshot rollback fallback",
+    "50 MiB SBOM uploads"
+  ],
+  "validation_boundary": "Unit/API fixtures, real official archive download, real read-only container workers and a disposable signed-package lifecycle. No existing SONiC workload package was remediated by this validation.",
+  "full_service": {
+    "tests": 560,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "passed": 558,
+    "report": "smart-patch-31-service-junit.xml"
+  },
+  "final_service_focus": {
+    "tests": 52,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 52,
+    "report": "smart-patch-31-focused-junit.xml"
+  },
+  "native": {
+    "full_suite_passed": 206,
+    "final_reporting_suite_passed": 14,
+    "tests_are_not_additive": true,
+    "source": "community unittest suites; final reporting change separates downloaded from staged"
+  },
+  "browser_full": {
+    "mode": "synthetic mock",
+    "pages_checked": 14,
+    "javascript_errors": [],
+    "screenshots": [
+      "overview-light.png",
+      "overview-dark.png",
+      "finding-evidence.png",
+      "external-agent-proposal.png",
+      "approved-manual-maintenance.png",
+      "approval-error-409.png",
+      "approval-error-403.png",
+      "collector-staging-denied.png",
+      "staged-maintenance.png",
+      "completed-scoped-reassessment.png",
+      "cve-discovery-mock.png",
+      "batch-preview.png",
+      "batch-paused-progress.png",
+      "overview-needs-evidence.png",
+      "mobile-request-performance.png"
+    ]
+  },
+  "browser_focused": {
+    "mode": "synthetic only",
+    "status_reads": 13,
+    "javascript_errors": [],
+    "screenshots": [
+      "remediation-status-history.png",
+      "cli-container-reassessment.png",
+      "remediation-status-mobile.png",
+      "switch-container-maintenance.png"
+    ]
+  },
+  "live_browser": {
+    "brand": "SONiC Smart Patch",
+    "four_switches_visible": true,
+    "batch_list_visible": true,
+    "selected_switches_action_visible": true,
+    "remediation_status_visible": true,
+    "sbom_50_mib_limit_visible": true,
+    "new_token_login": true,
+    "javascript_errors": [],
+    "write_requests": [],
+    "phase": "Before requested hardware exclusion; see demo_exclusion for final state"
+  },
+  "disposable_lifecycle": {
+    "baseline_version": "1.0-1",
+    "collector_paused_for_fixture": true,
+    "collector_restored": true,
+    "finished_at": "2026-10-01T11:38:42.498456+00:00",
+    "fixture_container_id": "c13324f5b21f0046e64c762d436e106e535632d702a3fcb585e317cbff18932e",
+    "fixture_image": "sha256:928da94f94af1d15a23c42ac06c6b614d57ed4022c5e4ea15dc35cc4a85d17cd",
+    "fixture_removed": true,
+    "fixture_repository_archive_sha256": "fa661bb9750cb62afa648b933ab2db062fbd81b29ea06f8a8cf52932b2d52e88",
+    "host_mounts": false,
+    "installation": {
+      "container_pid_changed": true,
+      "error": null,
+      "history": [
+        {
+          "at": "2026-10-01T11:38:11.428913+00:00",
+          "status": "planned"
+        },
+        {
+          "at": "2026-10-01T11:38:11.888527+00:00",
+          "status": "staging"
+        },
+        {
+          "at": "2026-10-01T11:38:12.241983+00:00",
+          "status": "downloading"
+        },
+        {
+          "at": "2026-10-01T11:38:12.980745+00:00",
+          "status": "downloaded"
+        },
+        {
+          "at": "2026-10-01T11:38:13.700071+00:00",
+          "status": "staged"
+        },
+        {
+          "at": "2026-10-01T11:38:14.395891+00:00",
+          "status": "installing"
+        },
+        {
+          "at": "2026-10-01T11:38:15.373220+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-01T11:38:15.444757+00:00",
+          "status": "restarting"
+        },
+        {
+          "at": "2026-10-01T11:38:28.175475+00:00",
+          "status": "pending_reassessment"
+        }
+      ],
+      "observed_version": "1.1-1",
+      "restart": {
+        "completed_at": "2026-10-01T11:38:28.165885+00:00",
+        "container_id": "c13324f5b21f0046e64c762d436e106e535632d702a3fcb585e317cbff18932e",
+        "direction": "forward",
+        "observed_version": "1.1-1",
+        "started_at": "2026-10-01T11:38:15.444578+00:00",
+        "status": "complete"
+      },
+      "same_container_id": true,
+      "status": "pending_reassessment"
+    },
+    "limitations": "Synthetic data-only packages; no real CVE claim; Debian Snapshot fallback is covered separately.",
+    "network": "none",
+    "original_container_count": 14,
+    "original_sonic_containers_unchanged": true,
+    "package": "smart-patch-lifecycle-probe-d91cbd6e",
+    "phase": "finished",
+    "phases": [
+      {
+        "at": "2026-10-01T11:38:08.933679+00:00",
+        "phase": "checking live maintenance"
+      },
+      {
+        "at": "2026-10-01T11:38:09.814830+00:00",
+        "phase": "creating disposable container"
+      },
+      {
+        "at": "2026-10-01T11:38:11.361902+00:00",
+        "phase": "planning synthetic package update"
+      },
+      {
+        "at": "2026-10-01T11:38:11.506935+00:00",
+        "phase": "staging signed forward and rollback packages"
+      },
+      {
+        "at": "2026-10-01T11:38:13.710073+00:00",
+        "phase": "installing and restarting only disposable container"
+      },
+      {
+        "at": "2026-10-01T11:38:28.332636+00:00",
+        "phase": "rolling back and restarting only disposable container"
+      },
+      {
+        "at": "2026-10-01T11:38:42.498472+00:00",
+        "phase": "finished"
+      }
+    ],
+    "plan_id": "711111eb-97e8-4216-9595-e7f5681178d6",
+    "privileged": false,
+    "published_ports": false,
+    "real_cve_resolution_claim": false,
+    "real_maintenance_mode_unchanged": true,
+    "rollback": {
+      "container_pid_changed": true,
+      "error": null,
+      "history": [
+        {
+          "at": "2026-10-01T11:38:11.428913+00:00",
+          "status": "planned"
+        },
+        {
+          "at": "2026-10-01T11:38:11.888527+00:00",
+          "status": "staging"
+        },
+        {
+          "at": "2026-10-01T11:38:12.241983+00:00",
+          "status": "downloading"
+        },
+        {
+          "at": "2026-10-01T11:38:12.980745+00:00",
+          "status": "downloaded"
+        },
+        {
+          "at": "2026-10-01T11:38:13.700071+00:00",
+          "status": "staged"
+        },
+        {
+          "at": "2026-10-01T11:38:14.395891+00:00",
+          "status": "installing"
+        },
+        {
+          "at": "2026-10-01T11:38:15.373220+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-01T11:38:15.444757+00:00",
+          "status": "restarting"
+        },
+        {
+          "at": "2026-10-01T11:38:28.175475+00:00",
+          "status": "pending_reassessment"
+        },
+        {
+          "at": "2026-10-01T11:38:28.389309+00:00",
+          "status": "rolling_back"
+        },
+        {
+          "at": "2026-10-01T11:38:29.410428+00:00",
+          "status": "restarting"
+        },
+        {
+          "at": "2026-10-01T11:38:42.172899+00:00",
+          "status": "rolled_back"
+        }
+      ],
+      "observed_version": "1.0-1",
+      "restart": {
+        "completed_at": "2026-10-01T11:38:42.157645+00:00",
+        "container_id": "c13324f5b21f0046e64c762d436e106e535632d702a3fcb585e317cbff18932e",
+        "direction": "rollback",
+        "observed_version": "1.0-1",
+        "started_at": "2026-10-01T11:38:29.409827+00:00",
+        "status": "complete"
+      },
+      "same_container_id": true,
+      "status": "rolled_back"
+    },
+    "scope": "container:smart-patch-e2e-d91cbd6e2ff44c7c",
+    "signed_fixture_repository": true,
+    "snapshot_archive_tested": false,
+    "staging": {
+      "forward": [
+        {
+          "package": "smart-patch-lifecycle-probe-d91cbd6e",
+          "sha256": "29f170ef98cabbda3b06672ca07093df8ba433398f30e436f16d521981640ff4",
+          "version": "1.1-1"
+        }
+      ],
+      "rollback": [
+        {
+          "package": "smart-patch-lifecycle-probe-d91cbd6e",
+          "sha256": "54b47d1a64d7aef2388f8dd550180097138b75affa668b70e56a14ee4b35450f",
+          "version": "1.0-1"
+        }
+      ],
+      "rollback_available": true,
+      "status": "staged"
+    },
+    "started_at": "2026-10-01T11:38:08.933634+00:00",
+    "status": "passed",
+    "switch_label": "Demo-VM-2",
+    "synthetic_fixture": true,
+    "test": "disposable-container-package-lifecycle"
+  },
+  "snapshot_download_report": "../../sonic-buildimage/src/sonic-smart-patch/test-results/snapshot-rollback-download.json",
+  "collector_artifact": {
+    "name": "sonic-smart-patch_3.1.0-1_all.deb",
+    "sha256": "6b9edb97c65da5a1d968ed745d8275fd8e9e9d514b9d78cb0dc2754b61d77439",
+    "builder": "supported scripts/build-deb.py / dpkg-deb helper; standard dpkg-buildpackage requires additional build dependencies absent on this development host"
+  },
+  "documentation": {
+    "guide": {
+      "pdf_pages": 49,
+      "text_outside_page": [],
+      "bookmarks": 35,
+      "contents_links_resolve": true
+    },
+    "design": {
+      "pdf_pages": 66,
+      "text_outside_page": [],
+      "bookmarks": 29,
+      "contents_links_resolve": true
+    }
+  },
+  "limits": [
+    "Protected/core packages still require manual image maintenance.",
+    "Container fixes change the writable layer and are lost on image recreation unless incorporated into the image.",
+    "Snapshot fallback is exact-version and architecture bound; vendor/custom versions may not exist, and an explicit snapshot date may be required.",
+    "Maintenance permission is not traffic draining."
+  ],
+  "archive_validation": {
+    "runs": [
+      {
+        "phase": "full regression before fixture correction",
+        "passed": 594,
+        "skipped": 2,
+        "failed": 1,
+        "report": "smart-patch-demo-archive-full-junit.xml"
+      },
+      {
+        "phase": "focused after fixture correction",
+        "passed": 25,
+        "report": "smart-patch-demo-archive-focused-junit.xml"
+      }
+    ],
+    "fixture_correction": "The analytics HistoryStore test double now supports the fleet visibility boundary lookup.",
+    "combined_final_test_outcomes": {
+      "passed": 596,
+      "skipped": 2
+    },
+    "combined_outcomes_are_from_full_suite_and_targeted_rerun": true
+  },
+  "demo_exclusion": {
+    "read_only": true,
+    "visible_device_count": 3,
+    "default_views_checked": [
+      "overview",
+      "fleet",
+      "findings",
+      "remediation-status",
+      "plans",
+      "jobs",
+      "changes",
+      "coverage",
+      "packages-trends",
+      "cve-trends",
+      "request-status",
+      "tokens"
+    ],
+    "checks": [
+      "three_expected_demo_vms",
+      "overview_counts_three_vms",
+      "default_api_records_exclude_hardware",
+      "all_default_finding_and_status_pages_exclude_hardware",
+      "direct_archived_device_returns_410"
+    ],
+    "javascript_errors": [],
+    "blocked_write_requests": [],
+    "hardware_collector_stopped": true,
+    "hardware_collector_disabled_at_boot": true,
+    "hardware_tokens_revoked": true,
+    "inventory_preserved": true,
+    "existing_hardware_owned_history_records_preserved": 40733
+  },
+  "live_rollout": {
+    "collector_version": "3.1.0-1",
+    "active_demo_vms": 3,
+    "hardware_archived_from_demo": true,
+    "maintenance_mode_default": false
+  }
+}

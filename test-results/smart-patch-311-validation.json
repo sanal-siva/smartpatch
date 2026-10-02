@@ -1,0 +1,53 @@
+{
+  "verified_at": "2026-10-01T13:17:30.086112+00:00",
+  "version": "3.1.1-1",
+  "package_sha256": "7c214f889184c5a946bde8da5875b8b5022cc5119e7eb42b9d6787389a10e2c2",
+  "problem": "APT downloaded into container /var/tmp tmpfs, but Docker archive copy could not see the runtime path.",
+  "fix": "Bounded artifact export/import through the pinned running-container root.",
+  "native_tests": {
+    "passed": 227,
+    "seconds": 47.779
+  },
+  "live_transfer": {
+    "status": "passed",
+    "export_matches_existing_runtime_files": true,
+    "temporary_import_matches_export": true,
+    "temporary_runtime_copy_removed": true,
+    "original_containers_unchanged": true,
+    "collector_remained_active": true,
+    "package_installation_performed": false,
+    "container_restart_performed": false
+  },
+  "live_staging": {
+    "status": "staged",
+    "scope": "container:radv",
+    "package": "socat",
+    "from_version": "1.8.0.2-1",
+    "target_version": "1.8.0.3-1+deb13u1",
+    "rollback_available": true,
+    "old_failed_plan_preserved": true,
+    "package_unchanged": true,
+    "containers_unchanged": true,
+    "installation_requested": false
+  },
+  "rollback_source": {
+    "type": "debian_snapshot",
+    "snapshot": "20250105T205329Z",
+    "archive": "debian",
+    "suite": "trixie",
+    "url": "https://snapshot.debian.org/archive/debian/20250105T205329Z/",
+    "verification": "apt_signed_repository",
+    "snapshot_file_hash": "864bf1e6c2bda51ad6261c9e39a0dd4f780c951a"
+  },
+  "service": {
+    "cli_staged_plan_visible": true,
+    "three_demo_vms_online": true,
+    "hardware_still_excluded": true,
+    "service_health": "healthy"
+  },
+  "deployment": {
+    "collector_updated_on_reported_demo_vm": true,
+    "enrollment_and_configuration_preserved": true
+  },
+  "validation_limit": "The optional live disposable install/restart/rollback fixture was rejected by automatic approval review and was not run. The separately approved live artifact transfer and staging checks passed; package installation and restart remain unexecuted."
+}

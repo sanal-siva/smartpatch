@@ -1,0 +1,23 @@
+flowchart TB
+  subgraph SQL["Five SQL tables"]
+    D["Device"]
+    M["InventoryMessage"]
+    T["Token"]
+    O["Operation"]
+    R["Record: typed JSON"]
+  end
+  T -->|"Device binding"| D
+  M -->|"Epoch and sequence"| D
+  D -->|"Assessment input"| O
+  O --> R
+  R --> F["Current findings and compact summaries"]
+  F --> H["Immutable assessment revisions"]
+  H --> E["Content-addressed evidence snapshots"]
+  R --> W["AI work, plans and request journals"]
+  R --> B["Releases, artifacts and verified bindings"]
+  R --> OBS["Discovery, observations and alerts"]
+  W -.->|"Logical references"| E
+  B -.->|"Logical association"| F
+  RET["Retention follows live references
+Archive before guarded deletion"] -.-> H
+  RET -.-> W

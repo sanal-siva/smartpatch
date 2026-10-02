@@ -1,0 +1,38 @@
+services:
+  smart-patch:
+    build: .
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${SMART_PATCH_BIND_HOST:-100.104.17.32}:${SMART_PATCH_BIND_PORT:-8000}:8000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+      STATE_DIR: /var/lib/smart-patch
+      DATABASE_URL: sqlite:////var/lib/smart-patch/smart_patch.db
+      TLS_CERT: /run/smart-patch-tls/service.crt
+      TLS_KEY: /run/smart-patch-tls/service.key
+      SCANNER_BINARY: /usr/local/bin/grype
+      SCANNER_DB_DIR: /var/lib/smart-patch/grype-db
+      WORKER_COUNT: 1
+      JOBS_ENABLED: "true"
+      AI_ENABLED: "false"
+      SOURCE_ROOTS: "[]"
+    volumes:
+      - smart_patch_state:/var/lib/smart-patch
+      - ${SMART_PATCH_TLS_DIR:-./.state/tls}:/run/smart-patch-tls:ro
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=256m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python", "-c", "import ssl,urllib.request; ctx=ssl.create_default_context(cafile='/run/smart-patch-tls/ca.crt'); urllib.request.urlopen('https://localhost:8000/health',context=ctx,timeout=5).read()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+volumes:
+  smart_patch_state:

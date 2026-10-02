@@ -1,0 +1,19 @@
+sequenceDiagram
+  autonumber
+  actor O as Operator
+  participant S as Smart Patch service
+  participant A as Signed-in coding agent
+  participant T as Bounded evidence tools
+  O->>S: Open case for a current finding
+  S-->>O: Snapshot hash, evidence, schemas and expiry
+  O->>A: Supply case through existing signed-in product
+  A->>S: Authenticated session tool request
+  S->>S: Check frozen identity and remaining budget
+  S->>T: Run allowlisted typed operation
+  T-->>S: Bounded observation and provenance
+  S-->>A: Register and return evidence ID
+  A->>S: Submit cited proposal
+  S->>S: Validate case identity and registered citations
+  S-->>O: Proposal saved, applicability unchanged
+  O->>S: Separate evidence-backed review if warranted
+  Note over S,A: Smart Patch does not implement provider SSO or verify agent-name claims

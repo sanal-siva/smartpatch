@@ -1,0 +1,15 @@
+flowchart TB
+  INPUT["Source HEAD, package database and build parameters"] --> MAN["Pre-seal deterministic manifest"]
+  MAN --> EMBED["Embed manifest before filesystem sealing"]
+  EMBED --> IMAGE["Completed image"]
+  IMAGE --> SBOM["Existing optional post-build pipeline
+SBOM and provenance outputs"]
+  IMAGE --> INDEX["External index hashes final artifacts"]
+  SBOM --> INDEX
+  MAN --> INDEX
+  INDEX --> SIGN["Approved builder signs exact index bytes"]
+  SIGN --> VERIFY["Service checks signature and original digests"]
+  KEY["Provisioned public key"] --> VERIFY
+  VERIFY --> BIND["Match switch build ID and reported manifest"]
+  BIND --> RESULT["Signed baseline association
+Not runtime attestation"]

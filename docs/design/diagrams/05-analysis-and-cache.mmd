@@ -1,0 +1,19 @@
+flowchart TB
+  INPUT["Capture inventory and context identity"] --> HIT{"Fresh matching
+assessment core?"}
+  HIT -->|"Yes"| RESTORE["Restore matching analysis progress"]
+  HIT -->|"No"| MATCH["Match each scope
+Grype cache or bounded central scan"]
+  MATCH --> POLICY["Apply evidence rules
+Preserve unknowns and coverage gaps"]
+  POLICY --> AI["Optional bounded investigation"]
+  RESTORE --> GUARD{"Inputs and proof
+still current?"}
+  AI --> GUARD
+  GUARD -->|"No"| STALE["Supersede result
+Reassess current input"]
+  GUARD -->|"Yes"| COMMIT["Commit findings, summaries and history"]
+  COMMIT --> BACKLOG["Remaining AI work
+Saved evidence, selected cases only"]
+  COMMIT --> OUT["Scoped API and collector results
+Separate response-cache layer"]

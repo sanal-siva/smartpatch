@@ -1,0 +1,44 @@
+intelligence-service/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   └── routes.py
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── session.py
+│   │   └── operations.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── cache.py
+│   │   ├── ai_client.py
+│   │   ├── assessment.py
+│   │   ├── sbom_parser.py
+│   │   └── github_sync.py
+│   ├── jobs/
+│   │   ├── __init__.py
+│   │   ├── scheduler.py
+│   │   ├── daily_sync.py
+│   │   └── retry_handler.py
+│   ├── observability/
+│   │   ├── __init__.py
+│   │   ├── metrics.py
+│   │   └── logging.py
+│   └── ui/
+│       ├── __init__.py
+│       ├── routes.py
+│       ├── static/
+│       └── templates/
+├── tests/
+│   ├── __init__.py
+│   ├── unit/
+│   ├── integration/
+│   └── spytest/
+├── requirements.txt
+├── setup.py
+├── docker-compose.yml
+└── .gitignore

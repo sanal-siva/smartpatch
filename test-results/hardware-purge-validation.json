@@ -1,0 +1,121 @@
+{
+  "service_regression": {
+    "tests": 684,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3,
+    "passed": 681,
+    "seconds": 304.954,
+    "junit": "hardware-purge-full-junit.xml"
+  },
+  "final_purge_checks": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 23,
+    "seconds": 11.518,
+    "junit": "hardware-purge-focused-junit.xml"
+  },
+  "rehearsal": {
+    "applied": true,
+    "records_removed": {
+      "analysis_backlog": 2,
+      "analysis_lifecycle": 13231,
+      "analysis_work": 8526,
+      "assessment_history": 8526,
+      "cache": 30,
+      "event": 17992,
+      "evidence_snapshot": 4833,
+      "finding": 4754,
+      "finding_summary": 4754,
+      "maintenance_scan": 1,
+      "plan": 1,
+      "remediation_batch": 1,
+      "scheduler_cadence": 1,
+      "snapshot": 6,
+      "status": 1
+    },
+    "devices_removed": 1,
+    "tokens_removed": 2,
+    "inventory_messages_removed": 2,
+    "operations_removed": 3,
+    "mixed_batches_updated": 0,
+    "discovery_ledger_rebuilt": true,
+    "shared_release_and_trust_data_preserved": true,
+    "mode": "Private copied-database rehearsal",
+    "unchanged_vm_records": true,
+    "unchanged_other_credentials": true,
+    "remaining_hardware_uuid_references": 0,
+    "live_mutations": false,
+    "integrity": "ok",
+    "seconds": 164.33
+  },
+  "code_changes": [
+    "Removed reversible device archive/restore APIs and runtime visibility filters.",
+    "Removed archive-only analytics and remediation-batch projections.",
+    "Kept general retention export-before-delete and missing-device worker protections.",
+    "Added transactional offline SQLite removal with read-only dry run and stopped-process checks."
+  ],
+  "limits": [
+    "Existing private backups and separate exported archives are retained.",
+    "Switch package uninstall and local switch-state wiping are separate operations.",
+    "Derived caches are invalidated and mixed historical fleet totals are removed rather than reconstructed."
+  ],
+  "live_cleanup": {
+    "applied": true,
+    "records_removed": {
+      "analysis_backlog": 2,
+      "analysis_lifecycle": 13231,
+      "analysis_work": 8526,
+      "assessment_history": 8526,
+      "cache": 30,
+      "event": 17992,
+      "evidence_snapshot": 4833,
+      "finding": 4754,
+      "finding_summary": 4754,
+      "maintenance_scan": 1,
+      "plan": 1,
+      "remediation_batch": 1,
+      "scheduler_cadence": 1,
+      "snapshot": 6,
+      "status": 1
+    },
+    "devices_removed": 1,
+    "tokens_removed": 2,
+    "inventory_messages_removed": 2,
+    "operations_removed": 3,
+    "mixed_batches_updated": 0,
+    "discovery_ledger_rebuilt": true,
+    "shared_release_and_trust_data_preserved": true,
+    "match_cache_files_invalidated": 108,
+    "database_bytes_before": 2327699456,
+    "database_bytes_after": 1151893504,
+    "vm_inventory_and_owned_history_unchanged": true,
+    "hardware_uuid_references_remaining": 0,
+    "integrity": "ok",
+    "health": "healthy",
+    "readiness": "ready",
+    "visible_demo_devices": 3,
+    "hardware_detail_status": 404,
+    "service_restart_verified": true,
+    "old_backups_retained": true
+  },
+  "live_api": {
+    "mode": "live read-only",
+    "archive_restore_routes_removed": true,
+    "visible_devices": 3,
+    "hardware_detail_http_status": 404,
+    "ordinary_views_exclude_removed_data": true,
+    "analytics_visibility_override_removed": true,
+    "discovery_cves": 331
+  },
+  "live_browser": {
+    "mode": "live read-only",
+    "three_demo_switches_visible": true,
+    "jobs_visible": true,
+    "job_inspect_visible": true,
+    "javascript_errors": [],
+    "write_requests": []
+  }
+}

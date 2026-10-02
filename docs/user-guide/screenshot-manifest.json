@@ -1,0 +1,95 @@
+{
+  "captured_at": "2026-10-01T10:23:49.219519+05:30",
+  "base_url": "https://<server-ip>:8000",
+  "presentation": "Local UI with labelled synthetic example data; no live scan results",
+  "synthetic_data": true,
+  "configuration_changes": false,
+  "switch_actions": false,
+  "screens": [
+    {
+      "file": "01-connect.png",
+      "description": "Empty connection dialog; enter a Smart Patch service token, not an AI key.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/"
+    },
+    {
+      "file": "02-overview.png",
+      "description": "Example fleet overview; candidate counts do not establish confirmed affected systems.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/"
+    },
+    {
+      "file": "03-token-example.png",
+      "description": "Example device-token form; values typed locally, Create token not clicked.",
+      "mode": "synthetic example; unsaved form example on live UI",
+      "url": "https://<server-ip>/ui/tokens"
+    },
+    {
+      "file": "04-settings.png",
+      "description": "Example provider/source settings. No provider API key is configured.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/settings"
+    },
+    {
+      "file": "05-fleet.png",
+      "description": "Example enrolled switches; online is a heartbeat state.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/fleet"
+    },
+    {
+      "file": "06-device-detail.png",
+      "description": "Example device detail with scan and evidence controls. No actions submitted.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/fleet"
+    },
+    {
+      "file": "07-findings.png",
+      "description": "Finding search; inspect the package and scope on each switch.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/findings?search=CVE-2099-10001"
+    },
+    {
+      "file": "08-finding-detail.png",
+      "description": "Example LLDP finding detail. Under investigation remains distinct from fixed/not affected.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/findings?search=CVE-2099-10001"
+    },
+    {
+      "file": "09-review-example.png",
+      "description": "Administrator review form with example rationale; no review submitted.",
+      "mode": "synthetic example; unsaved form example on live UI",
+      "url": "https://<server-ip>/ui/findings?search=CVE-2099-10001"
+    },
+    {
+      "file": "10-version-tool.png",
+      "description": "Example read-only Debian version comparison; result zero means the versions compare equal.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/tools"
+    },
+    {
+      "file": "11-release-example.png",
+      "description": "Release example; public keyring path is a prerequisite placeholder. Registration/upload not submitted.",
+      "mode": "synthetic example; unsaved form example on live UI",
+      "url": "https://<server-ip>/ui/releases"
+    },
+    {
+      "file": "12-coverage.png",
+      "description": "Example coverage and freshness; signed baseline and scanner coverage are separate.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/coverage"
+    },
+    {
+      "file": "13-discovery.png",
+      "description": "Example first-observed CVE chart; retained historical coverage is partial.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/cve-trends"
+    },
+    {
+      "file": "14-jobs.png",
+      "description": "Example background jobs; queued/completed processing does not prove vulnerability resolution.",
+      "mode": "synthetic example; live",
+      "url": "https://<server-ip>/ui/jobs"
+    }
+  ],
+  "javascript_errors": []
+}

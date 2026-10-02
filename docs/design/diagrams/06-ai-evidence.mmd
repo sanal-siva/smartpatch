@@ -1,0 +1,18 @@
+flowchart TB
+  UNKNOWN["Unresolved scoped finding"] --> CHOOSE["Choose an investigation lane"]
+  CHOOSE --> AUTO["Configured API provider"]
+  CHOOSE --> CASE["Frozen case for signed-in agent"]
+  AUTO --> SAVE["Persist pending state and reserve attempt"]
+  SAVE --> MODEL["Bounded model and typed-tool loop"]
+  MODEL -->|"Failure"| RETRY["Backoff and fair continuation
+Maximum five investigations per input"]
+  RETRY --> SAVE
+  MODEL -->|"Valid evidence citations"| PROPOSAL["Recorded proposal
+Unknown can be a completed answer"]
+  CASE --> EXT["Agent uses authenticated case tools"]
+  EXT --> VALIDATE["Validate snapshot, scope and citations"]
+  VALIDATE --> PROPOSAL
+  PROPOSAL --> REVIEW["Separate administrator review"]
+  REVIEW --> RULE["Scoped decision with evidence expiry"]
+  RULE --> EXPIRE["Changed or expired proof
+Returns to unresolved / last known"]

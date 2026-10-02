@@ -1,0 +1,5 @@
+include requirements.txt
+include requirements.lock
+recursive-include app/ui/templates *.html
+recursive-include app/ui/static *.css *.js
+recursive-include app/services/schemas *.json

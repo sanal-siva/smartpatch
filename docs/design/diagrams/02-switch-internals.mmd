@@ -1,0 +1,25 @@
+flowchart TB
+  CLI["Native CLI"] --> CFG["ConfigDB + YANG
+Private fallback and token"]
+  CFG --> DAEMON["Daemon lifecycle
+Limits and retry schedule"]
+  DAEMON --> AGENT["Agent
+Collect, persist, send, acknowledge"]
+  HOOK["Host APT dirty hint"] --> AGENT
+  AGENT --> COL["Scoped metadata collector
+Host and running containers"]
+  COL --> JOURNAL[("Private journal
+Inventory, pending message, results")]
+  AGENT <--> JOURNAL
+  AGENT <--> HTTPS["Outbound HTTPS
+Central intelligence service"]
+  AGENT --> PUB["Public status + STATE_DB
+Read by native show"]
+  PUB --> CLI
+  AGENT --> ACT["Queued action executor
+Policy and durable request ID"]
+  ACT --> MAINT["Maintenance engine
+Stage, health-gated apply, rollback"]
+  MAINT --> JOURNAL
+  JOURNAL --> VEX["Scoped VEX
+Expiry and evidence checks"]

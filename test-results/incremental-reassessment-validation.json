@@ -1,0 +1,113 @@
+{
+  "service_tests": {
+    "tests": 674,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3,
+    "passed": 671,
+    "seconds": 314.468,
+    "junit": "incremental-reassessment-full-junit.xml"
+  },
+  "real_grype_copied_inventory": {
+    "test": "Copied reported inventory with simulated socat version update",
+    "scope_count": 15,
+    "package_count": 3997,
+    "scanner": {
+      "status": "ready",
+      "version": "0.112.0",
+      "db_revision": "2026-09-30T06:32:47Z",
+      "db_built_at": "2026-09-30T06:32:47Z"
+    },
+    "no_switch_or_service_mutations": true,
+    "baseline_seconds": 75.813,
+    "updated_seconds": 34.953,
+    "actual_grype_matching_runs": 1,
+    "new_package_matches": 1,
+    "reused_packages": 3996,
+    "reference_full_seconds": 44.387,
+    "all_scopes_exact_findings_and_evidence_parity": true,
+    "fixed_package_zero_matches": true,
+    "limitation": "Offline copied-inventory correctness test. Matching-input reduction is not a total resource or latency benchmark."
+  },
+  "browser": {
+    "mode": "synthetic read-only",
+    "javascript_errors": [],
+    "operation_reads": 12,
+    "screenshots": [
+      "jobs-progress.png",
+      "job-detail-progress.png"
+    ]
+  },
+  "documentation": {
+    "user_guide": {
+      "pdf_pages": 49,
+      "text_outside_page": [],
+      "bookmarks": 35,
+      "contents_links_resolve": true
+    },
+    "design": {
+      "pdf_pages": 67,
+      "text_outside_page": [],
+      "bookmarks": 29,
+      "contents_links_resolve": true
+    }
+  },
+  "limits": [
+    "First compatible format-2 baseline requires full matching; incompatible or missing context falls back to full matching.",
+    "Incremental matching currently supports complete, unambiguous Debian package inventories.",
+    "Merged findings still undergo current-context assessment and evidence persistence; reduced matching input is not a measured end-to-end CPU or memory reduction.",
+    "No live switch package changes were made for this validation."
+  ],
+  "real_grype_fixture": {
+    "label": "Synthetic Debian package metadata, real central Grype; no switch/package changes",
+    "scanner": {
+      "status": "ready",
+      "version": "0.112.0",
+      "db_revision": "2026-09-30T06:32:47Z",
+      "db_built_at": "2026-09-30T06:32:47Z"
+    },
+    "timings": {
+      "baseline_seconds": 3.889,
+      "incremental_seconds": 3.7,
+      "full_current_seconds": 1.876
+    },
+    "covered_packages": 3,
+    "incremental_matched_packages": 1,
+    "incremental_reused_packages": 2,
+    "previous_findings": 42,
+    "current_findings": 41,
+    "exact_findings_and_evidence_parity": true,
+    "zero_match_reuse_after_restart": true,
+    "limitation": "Tiny correctness fixture; timings are not a fleet performance benchmark"
+  },
+  "opt_in_tests": {
+    "incremental_grype": "Run separately and passed",
+    "lldpd_release_lineage_corpus": "Skipped; unrelated optional corpus",
+    "real_grype_agent_wire": "Skipped in regression suite; package matching additionally verified with copied reported inventory"
+  },
+  "live_service": {
+    "verified_at": "2026-10-02T04:03:36.217091+00:00",
+    "health": {
+      "status": "healthy",
+      "database": "healthy",
+      "timestamp": "2026-10-02T04:03:33.231076Z"
+    },
+    "readiness": "ready",
+    "scanner_status": "ready",
+    "settings_preserved": true,
+    "enrollments_preserved": true,
+    "batch_api_ready": true,
+    "build_evidence_policy": "optional",
+    "forced_termination": false,
+    "ui_asset_matches_source": true,
+    "switch_changes_requested": false
+  },
+  "live_browser": {
+    "mode": "live read-only",
+    "three_demo_switches_visible": true,
+    "jobs_visible": true,
+    "job_inspect_visible": true,
+    "javascript_errors": [],
+    "write_requests": []
+  }
+}

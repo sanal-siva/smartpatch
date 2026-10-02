@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-01T04:56:54.989922+00:00",
+  "source_links_checked": 389,
+  "broken_links": [],
+  "mermaid_diagrams": 11,
+  "all_diagrams_rendered": true,
+  "checkpoint_example_hash_valid": true,
+  "pdf_pages": 63,
+  "bookmarks": 27,
+  "no_previous_brand": true,
+  "no_private_paths_or_addresses": true,
+  "scope": "Documentation export and link checks; no deployment or operational outcome implied.",
+  "artifacts": {
+    "DETAILED_DESIGN.md": {
+      "sha256": "ce6170b6b871a2e0f295dd20fe0e0d97854b46ff8e3574192990beaafaf6cbfc",
+      "bytes": 116889
+    },
+    "DETAILED_DESIGN.html": {
+      "sha256": "1321c2605e66e1f86dca7e61456e871c6830861b4760c5aeef0d7344094fe0e3",
+      "bytes": 443902
+    },
+    "DETAILED_DESIGN.pdf": {
+      "sha256": "52e8f48511f2fa65a0214dd0f34c94b7da7fb285945a9491f78119ca4f16c029",
+      "bytes": 1338005
+    },
+    "COMMUNITY_SONIC_DESIGN.md": {
+      "sha256": "c989dbd3030914d8d5d3c1888e69c414c96e65fbf0379314aec6a71aa32f2bd8",
+      "bytes": 48151
+    },
+    "INTELLIGENCE_SERVICE_DESIGN.md": {
+      "sha256": "0ddceb82290ed93c0621ea3d8ce898958dbe6dac9dd8277e3cfb9ca101ab2a9d",
+      "bytes": 49421
+    },
+    "README.md": {
+      "sha256": "4cc44552acc78ed4ee5855052eaa5cd66cfd572540c0d31a6765c6b60059bd01",
+      "bytes": 1582
+    }
+  }
+}

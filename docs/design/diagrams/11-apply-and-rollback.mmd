@@ -1,0 +1,26 @@
+sequenceDiagram
+  autonumber
+  participant S as Service
+  participant G as Smart Patch
+  participant H as Health checks
+  participant P as Package transaction
+  G->>S: Outbound synchronization
+  S->>S: Revalidate current plan and request phase
+  S-->>G: Authorized execute request
+  G->>G: Journal request, lock, recheck inventory and transaction
+  G->>H: Capture full baseline immediately before install
+  alt Baseline incomplete or unhealthy
+    G-->>S: Denied result, no installation
+  else Baseline passes
+    G->>P: Apply retained exact forward artifacts
+    G->>H: Verify post-change state
+    alt Install or validation fails
+      G->>P: Apply retained rollback artifacts
+      G->>H: Compare recovery with original baseline
+    else Checks pass
+      G->>G: Mark pending reassessment
+    end
+    G->>S: Durable outcome and changed inventory
+    S->>S: Reassess the new occurrence and retain history
+  end
+  Note over S,G: A transaction result is not an automatic fixed verdict

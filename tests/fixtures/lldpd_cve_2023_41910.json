@@ -1,0 +1,23 @@
+{
+  "corpus_id": "lldpd-cve-2023-41910-release-lineage-v1",
+  "label": "Small, synthetic package-metadata corpus derived from one real triage case; no DUT vulnerability or exploitability claim",
+  "selected_cve": "CVE-2023-41910",
+  "provenance": {
+    "source": "https://security-tracker.debian.org/tracker/CVE-2023-41910",
+    "recorded_evidence_id": "advisory-fa5143aeed704cfa3d3a42e2",
+    "fetched_at": "2026-09-29T22:49:49.190563Z",
+    "content_sha256": "4e2f981f682b2da1f62c3c8adbacb0354e596b03231e2022f5c99758e6291802",
+    "basis": "The recorded official Debian tracker lists the bookworm lldpd version 1.0.16-1+deb12u1 as fixed. The earlier 1.0.16-1 is the unpatched comparison case."
+  },
+  "cases": [
+    {"id": "bookworm_before_security_update", "debian_release": "12", "package": "lldpd", "version": "1.0.16-1", "expected_selected_cve_match": true},
+    {"id": "bookworm_security_update", "debian_release": "12", "package": "lldpd", "version": "1.0.16-1+deb12u1", "expected_selected_cve_match": false},
+    {"id": "bookworm_revision_in_trixie_scope", "debian_release": "13", "package": "lldpd", "version": "1.0.16-1+deb12u1", "expected_selected_cve_match": true, "expected_policy_applicability": "under_investigation", "policy_context": "Synthetic verified-baseline flag; not a verified switch artifact"}
+  ],
+  "limitations": [
+    "One CVE, one package, two versions and two advisory-feed scopes do not measure all-CVE recall or precision.",
+    "Package metadata matching does not prove vulnerable code is running, reachable or exploitable.",
+    "A Debian revision suffix is only an uncertainty signal; it does not prove that a security patch is present.",
+    "Expected matches are checked against the recorded scanner/database revision at run time; future advisory changes may require review."
+  ]
+}
